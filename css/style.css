@@ -127,7 +127,7 @@ header.site-header{
 .brand{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap: 12px;
   font-family:var(--serif);
   font-size:22px;
   font-weight:700;
@@ -230,6 +230,8 @@ nav.main-nav a.active::after{
     linear-gradient(var(--sand) 0%, var(--sand) 100%);
   overflow:hidden;
   border-bottom:1px solid var(--line);
+  height:calc(105vh - 84px);
+  padding-top:20px;
 }
 /* ---- hero background slideshow ---- */
 .hero-slideshow{
