@@ -228,11 +228,9 @@ nav.main-nav a.active::after{
 }
 .hero-grid{
   position:absolute; inset:0;
-  background-image:
-    linear-gradient(rgba(35,34,30,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(35,34,30,0.05) 1px, transparent 1px);
-  background-size:44px 44px;
-  mask-image:linear-gradient(to bottom, black, transparent 85%);
+  background-image: url("../images/interior-dark.jpg");
+  background-size:cover;
+  background-position:center;
   pointer-events:none;
 }
 .hero-inner{
