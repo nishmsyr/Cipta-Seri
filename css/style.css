@@ -541,7 +541,7 @@ nav.main-nav a.active::after{
   cursor:pointer;
 }
 .split-media img{ width:100%; height:100%; object-fit:cover; }
-.split-media:hover img{ transform:scale(1.04); transition:all 0.3s ease;}
+.split-media:hover img{ transform:scale(1.10); transition:all 0.3s ease;}
 .split-media .frame-tag{
   position:absolute; bottom:16px; left:16px;
   background:var(--white);
