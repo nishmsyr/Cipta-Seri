@@ -163,7 +163,12 @@ header.site-header{
   text-transform:uppercase;
 }
 
-nav.main-nav ul{ display:flex; gap:2px; }
+nav.main-nav ul{ 
+  display:flex; 
+  gap:2px; 
+  border-left:1px solid var(--line);
+  border-color:var(--brass);
+}
 nav.main-nav a{
   font-size:13.5px;
   font-weight:600;
@@ -372,7 +377,7 @@ nav.main-nav a.active::after{
   padding:40px 34px;
   transition:background .25s ease;
 }
-.service-card:hover{ background:var(--white); }
+.service-card:hover{ background:var(--sand-deep); }
 .service-card .num{
   font-family:var(--mono);
   font-size:12px;
