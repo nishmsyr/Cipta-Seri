@@ -68,6 +68,151 @@
   observer.observe(hero);
 })();
 
+// ============================================================
+//  SMOOTH SCROLL ENHANCEMENTS
+//  • Scroll progress bar  (GPU-composited scaleX — no layout cost)
+//  • Smart sticky header  (hides on scroll-down, snaps back on scroll-up)
+//  • Scroll-reveal system (IntersectionObserver, auto-discovers elements)
+//  • Staggered grid reveals (service cards, gallery items, values, footer)
+//  All three features respect prefers-reduced-motion.
+// ============================================================
+(function smoothScrollEnhancements() {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── Scroll progress bar ───────────────────────────────────────────
+     Inject once; update via scaleX — GPU-composited, no paint/layout. */
+  const progressBar = document.createElement('div');
+  progressBar.className = 'scroll-progress-bar';
+  progressBar.setAttribute('aria-hidden', 'true');
+  document.body.prepend(progressBar);
+
+  /* ── Smart sticky header ───────────────────────────────────────────
+     Hide on scroll-down past 80 px, reveal on any scroll-up.
+     Skipped when mobile nav drawer is open (nav is inaccessible anyway
+     once the header is off-screen). */
+  const header   = document.querySelector('.site-header');
+  let   lastScrollY  = window.scrollY;
+  let   rafPending   = false;
+
+  function onScrollFrame() {
+    const y      = window.scrollY;
+    const maxY   = document.documentElement.scrollHeight - window.innerHeight;
+
+    /* Progress bar: scaleX(0→1) mapped to scroll position */
+    progressBar.style.transform = 'scaleX(' + (maxY > 0 ? y / maxY : 0) + ')';
+
+    if (header) {
+      /* Subtle shadow once user leaves the top */
+      header.classList.toggle('scrolled', y > 16);
+
+      /* Hide/reveal — only when reduced-motion is not requested and
+         the mobile nav drawer is not currently open */
+      if (!prefersReduced && !header.querySelector('.main-nav.open')) {
+        if (y > lastScrollY && y > 80) {
+          header.classList.add('header-hidden');
+        } else if (y < lastScrollY) {
+          header.classList.remove('header-hidden');
+        }
+      }
+    }
+
+    lastScrollY = y;
+    rafPending  = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!rafPending) {
+      requestAnimationFrame(onScrollFrame);
+      rafPending = true;
+    }
+  }, { passive: true });
+
+  /* Seed the initial state (handles page refreshed mid-scroll) */
+  onScrollFrame();
+
+  /* ── Scroll-reveal ─────────────────────────────────────────────────
+     Skip entirely if the user prefers reduced motion; the CSS safety-net
+     rule already guarantees those elements stay fully visible. */
+  if (prefersReduced) return;
+
+  /* Elements revealed as a single unit */
+  const soloTargets = [
+    '.section-head',
+    '.process-row',
+    '.split',
+    '.contact-wrap',
+    '.map-embed',
+    '.cta-band .container',
+    '.filter-bar',
+    '.page-header .container',
+  ];
+
+  /* Grid containers whose direct children stagger in sequentially.
+     parent  → gets .js-stagger class
+     item    → selector run on the parent; matches get .js-reveal */
+  const staggerTargets = [
+    { parent: '.services-grid',       item: '.service-card'  },
+    { parent: '.values-grid',         item: '.value-item'    },
+    { parent: '.gallery-grid',        item: '.gallery-item'  },
+    { parent: '.footer-top',          item: ':scope > div'   },
+  ];
+
+  /* Apply solo reveal classes */
+  soloTargets.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      el.classList.add('js-reveal');
+    });
+  });
+
+  /* Apply staggered reveal classes */
+  staggerTargets.forEach(({ parent, item }) => {
+    document.querySelectorAll(parent).forEach(parentEl => {
+      parentEl.classList.add('js-stagger');
+      parentEl.querySelectorAll(item).forEach(child => {
+        child.classList.add('js-reveal');
+      });
+    });
+  });
+
+  /* Shared observer — keeps watching after first reveal so animations
+     replay every time the element re-enters the viewport.
+
+     On ENTRY  → add is-visible  (CSS transition plays: slide-up reveal)
+     On EXIT   → instant invisible reset via js-reset class so the next
+                 entry always triggers a fresh, smooth entrance animation.
+
+     The double-rAF on exit is critical: it lets the browser commit the
+     no-transition invisible state to the compositor in one frame, then
+     removes js-reset in the next frame — leaving the element ready for
+     a clean entrance on the following intersection. */
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const el = entry.target;
+      if (entry.isIntersecting) {
+        /* Element entered viewport → play the reveal animation */
+        el.classList.add('is-visible');
+      } else {
+        /* Element left viewport → snap back to hidden instantly.
+           Step 1: kill transition + remove visible class (snap invisible) */
+        el.classList.add('js-reset');
+        el.classList.remove('is-visible');
+        /* Step 2: two frames later re-enable the transition so the next
+           entry plays the full smooth animation */
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            el.classList.remove('js-reset');
+          });
+        });
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -24px 0px',
+  });
+
+  document.querySelectorAll('.js-reveal').forEach(el => revealObserver.observe(el));
+})();
+
 // ---- mobile nav toggle ----
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.menu-toggle');

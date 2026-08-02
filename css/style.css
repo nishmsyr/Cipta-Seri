@@ -737,9 +737,74 @@ footer.site-footer{
   .footer-top{ grid-template-columns:1fr; }
 }
 
+
+/* ============================================================
+   SMOOTH SCROLL ENHANCEMENTS
+   Scroll progress · Smart header · Scroll-reveal animations
+   ============================================================ */
+
+/* Scroll progress bar
+   Uses GPU-composited scaleX — no layout, no paint, pure composite */
+.scroll-progress-bar{
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:2px;
+  background:var(--ochre);
+  transform:scaleX(0);
+  transform-origin:left center;
+  z-index:300;
+  pointer-events:none;
+  will-change:transform;
+}
+
+/* Smart sticky header — hide on scroll-down, reveal on scroll-up */
+.site-header{
+  transition:transform 0.45s cubic-bezier(0.22,1,0.36,1),
+             box-shadow 0.3s ease;
+}
+.site-header.scrolled{
+  box-shadow:0 4px 32px rgba(42,43,46,0.09);
+}
+.site-header.header-hidden{
+  transform:translateY(-100%);
+}
+
+/* Scroll-reveal — base (invisible) state */
+.js-reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity 0.75s cubic-bezier(0.22,1,0.36,1),
+             transform 0.75s cubic-bezier(0.22,1,0.36,1);
+  will-change:opacity,transform;
+}
+/* Revealed state */
+.js-reveal.is-visible{
+  opacity:1;
+  transform:none;
+  will-change:auto;
+}
+/* Instant reset — suppresses exit transition so elements snap invisible
+   off-screen; the smooth entrance replays cleanly on every re-entry. */
+.js-reveal.js-reset{
+  transition:none !important;
+}
+
+/* Stagger delays for direct children inside a .js-stagger parent */
+.js-stagger > .js-reveal:nth-child(1){ transition-delay:  0ms; }
+.js-stagger > .js-reveal:nth-child(2){ transition-delay: 80ms; }
+.js-stagger > .js-reveal:nth-child(3){ transition-delay:160ms; }
+.js-stagger > .js-reveal:nth-child(4){ transition-delay:240ms; }
+.js-stagger > .js-reveal:nth-child(5){ transition-delay:320ms; }
+.js-stagger > .js-reveal:nth-child(6){ transition-delay:400ms; }
+.js-stagger > .js-reveal:nth-child(7){ transition-delay:480ms; }
+.js-stagger > .js-reveal:nth-child(8){ transition-delay:560ms; }
+.js-stagger > .js-reveal:nth-child(9){ transition-delay:640ms; }
+
 /* reduced motion */
 @media (prefers-reduced-motion: reduce){
   *{ transition:none !important; scroll-behavior:auto !important; }
+  /* Safety net: make reveal elements immediately visible */
+  .js-reveal{ opacity:1 !important; transform:none !important; }
 }
 
 /* focus visibility */
