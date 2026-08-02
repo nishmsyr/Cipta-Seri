@@ -1,3 +1,73 @@
+// ============================================================
+//  HERO BACKGROUND SLIDESHOW
+//  • Auto-advances every 5 s with a 1.2 s CSS opacity fade
+//  • IntersectionObserver resets to slide 0 when hero re-enters view
+//  • Pauses when the hero is fully scrolled out of the viewport
+//  • Respects prefers-reduced-motion: skips animation, shows slide 0
+// ============================================================
+(function heroSlideshow() {
+  const INTERVAL_MS = 5000;
+
+  // Exit early if user prefers reduced motion
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const slides = document.querySelectorAll('.hero-slide');
+  const hero   = document.querySelector('.hero');
+  if (!slides.length || !hero) return;
+
+  let current  = 0;
+  let timer    = null;
+
+  /** Activate a specific slide by index */
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    current = index % slides.length;
+    slides[current].classList.add('active');
+  }
+
+  /** Advance to the next slide */
+  function advance() {
+    goTo((current + 1) % slides.length);
+  }
+
+  /** Start (or restart) the auto-play interval */
+  function startTimer() {
+    if (timer) return;                     // already running
+    timer = setInterval(advance, INTERVAL_MS);
+  }
+
+  /** Stop the interval */
+  function stopTimer() {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+  }
+
+  /** Reset to the first slide and restart the interval */
+  function reset() {
+    stopTimer();
+    goTo(0);
+    startTimer();
+  }
+
+  // Watch when the hero section enters / leaves the viewport
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          reset();          // re-entering: restart from slide 0
+        } else {
+          stopTimer();      // fully off-screen: pause to save resources
+        }
+      });
+    },
+    { threshold: 0.01 }   // fire as soon as even 1% of the hero is visible
+  );
+
+  observer.observe(hero);
+})();
+
 // ---- mobile nav toggle ----
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.menu-toggle');
