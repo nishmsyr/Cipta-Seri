@@ -12,11 +12,11 @@
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const slides = document.querySelectorAll('.hero-slide');
-  const hero   = document.querySelector('.hero');
+  const hero = document.querySelector('.hero');
   if (!slides.length || !hero) return;
 
-  let current  = 0;
-  let timer    = null;
+  let current = 0;
+  let timer = null;
 
   /** Activate a specific slide by index */
   function goTo(index) {
@@ -90,20 +90,20 @@
      Hide on scroll-down past 80 px, reveal on any scroll-up.
      Skipped when mobile nav drawer is open (nav is inaccessible anyway
      once the header is off-screen). */
-  const header   = document.querySelector('.site-header');
-  let   lastScrollY  = window.scrollY;
-  let   rafPending   = false;
+  const header = document.querySelector('.site-header');
+  let lastScrollY = window.scrollY;
+  let rafPending = false;
 
   function onScrollFrame() {
-    const y      = window.scrollY;
-    const maxY   = document.documentElement.scrollHeight - window.innerHeight;
+    const y = window.scrollY;
+    const maxY = document.documentElement.scrollHeight - window.innerHeight;
 
     /* Progress bar: scaleX(0→1) mapped to scroll position */
     progressBar.style.transform = 'scaleX(' + (maxY > 0 ? y / maxY : 0) + ')';
 
     if (header) {
       /* Subtle shadow once user leaves the top */
-      header.classList.toggle('scrolled', y > 16);
+      header.classList.toggle('scrolled', y > 30);
 
       /* Hide/reveal — only when reduced-motion is not requested and
          the mobile nav drawer is not currently open */
@@ -117,7 +117,7 @@
     }
 
     lastScrollY = y;
-    rafPending  = false;
+    rafPending = false;
   }
 
   window.addEventListener('scroll', () => {
@@ -151,10 +151,10 @@
      parent  → gets .js-stagger class
      item    → selector run on the parent; matches get .js-reveal */
   const staggerTargets = [
-    { parent: '.services-grid',       item: '.card-link'  },
-    { parent: '.values-grid',         item: '.value-item'    },
-    { parent: '.gallery-grid',        item: '.gallery-item'  },
-    { parent: '.footer-top',          item: ':scope > div'   },
+    { parent: '.services-grid', item: '.card-link' },
+    { parent: '.values-grid', item: '.value-item' },
+    { parent: '.gallery-grid', item: '.gallery-item' },
+    { parent: '.footer-top', item: ':scope > div' },
   ];
 
   /* Apply solo reveal classes */
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-document.querySelectorAll(".slider").forEach(slider => {
+  document.querySelectorAll(".slider").forEach(slider => {
 
     const slides = slider.querySelector(".slides");
     const images = slider.querySelectorAll(".slides img");
@@ -321,43 +321,43 @@ document.querySelectorAll(".slider").forEach(slider => {
     let index = 0;
 
     function updateSlider() {
-        slides.style.transform = `translateX(-${index * 100}%)`;
+      slides.style.transform = `translateX(-${index * 100}%)`;
 
-        dots.forEach(dot => dot.classList.remove("active"));
-        dots[index].classList.add("active");
+      dots.forEach(dot => dot.classList.remove("active"));
+      dots[index].classList.add("active");
     }
 
     next.addEventListener("click", () => {
-        if(index < images.length - 1){
-            index++;
-        }else{
-            index = 0;   // loop back
-        }
-        updateSlider();
+      if (index < images.length - 1) {
+        index++;
+      } else {
+        index = 0;   // loop back
+      }
+      updateSlider();
     });
 
     prev.addEventListener("click", () => {
-        if(index > 0){
-            index--;
-        }else{
-            index = images.length - 1;
-        }
+      if (index > 0) {
+        index--;
+      } else {
+        index = images.length - 1;
+      }
+      updateSlider();
+    });
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        index = i;
         updateSlider();
+      });
     });
 
-    dots.forEach((dot,i)=>{
-        dot.addEventListener("click",()=>{
-            index = i;
-            updateSlider();
-        });
-    });
-
-});
+  });
 
   // ---- 3D Flip Card Mobile Interaction ----
   const flipCards = document.querySelectorAll('.card-link');
   flipCards.forEach(card => {
-    card.addEventListener('click', function(e) {
+    card.addEventListener('click', function (e) {
       if (window.matchMedia('(hover: none)').matches) {
         if (!this.classList.contains('flipped')) {
           e.preventDefault();
