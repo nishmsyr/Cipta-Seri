@@ -310,6 +310,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+document.querySelectorAll(".slider").forEach(slider => {
+
+    const slides = slider.querySelector(".slides");
+    const images = slider.querySelectorAll(".slides img");
+    const dots = slider.querySelectorAll(".dot");
+    const next = slider.querySelector(".next");
+    const prev = slider.querySelector(".prev");
+
+    let index = 0;
+
+    function updateSlider() {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[index].classList.add("active");
+    }
+
+    next.addEventListener("click", () => {
+        if(index < images.length - 1){
+            index++;
+        }else{
+            index = 0;   // loop back
+        }
+        updateSlider();
+    });
+
+    prev.addEventListener("click", () => {
+        if(index > 0){
+            index--;
+        }else{
+            index = images.length - 1;
+        }
+        updateSlider();
+    });
+
+    dots.forEach((dot,i)=>{
+        dot.addEventListener("click",()=>{
+            index = i;
+            updateSlider();
+        });
+    });
+
+});
+
   // ---- 3D Flip Card Mobile Interaction ----
   const flipCards = document.querySelectorAll('.card-link');
   flipCards.forEach(card => {
