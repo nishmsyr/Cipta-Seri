@@ -872,6 +872,7 @@ nav.main-nav a.active::after{
   background:var(--ochre-dk);
   color:var(--white);
   text-align:center;
+  padding: 1rem 1rem;
 }
 .cta-band h2{ color:var(--white); font-size:clamp(26px,4vw,40px); max-width:20ch; margin:0 auto 28px; }
 .cta-band .btn{ background:var(--white); color:var(--ochre-dk); border-color:var(--white); }
