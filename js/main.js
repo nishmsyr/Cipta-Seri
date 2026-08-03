@@ -5,6 +5,44 @@
 //  • Pauses when the hero is fully scrolled out of the viewport
 //  • Respects prefers-reduced-motion: skips animation, shows slide 0
 // ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector('.main-nav ul');
+  const activeLink = nav.querySelector('a.active') || nav.querySelector('a');
+
+  // Create the underline element dynamically
+  const indicator = document.createElement('div');
+  indicator.classList.add('nav-indicator');
+  nav.appendChild(indicator);
+
+  // Helper function to set indicator position & width
+  function moveIndicator(element) {
+    const rect = element.getBoundingClientRect();
+    const navRect = nav.getBoundingClientRect();
+
+    indicator.style.width = `${rect.width}px`;
+    indicator.style.left = `${rect.left - navRect.left}px`;
+  }
+
+  // Initialize line on active link
+  if (activeLink) {
+    moveIndicator(activeLink);
+  }
+
+  // Move indicator on hover over links
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('mouseenter', (e) => {
+      moveIndicator(e.target);
+    });
+  });
+
+  // Return indicator to active link when mouse leaves the nav
+  nav.addEventListener('mouseleave', () => {
+    if (activeLink) {
+      moveIndicator(activeLink);
+    }
+  });
+});
+
 (function heroSlideshow() {
   const INTERVAL_MS = 5000;
 

@@ -323,6 +323,57 @@ nav.main-nav ul {
   align-items: center;
 }
 
+.main-nav {
+  position: relative;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.main-nav li a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Moving Underline Indicator */
+.nav-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--ochre-dk, #d4af37); /* Accent color */
+  border-radius: 2px;
+  transition: left 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
+              width 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+}
+
+.main-nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(#d4af37); /* Accent color */
+  
+  /* Shares the same transition key across pages */
+  view-transition-name: active-nav-underline; 
+}
+
+/* Enable cross-page view transitions */
+@view-transition {
+  navigation: auto;
+}
+
 nav.main-nav a {
   font-size: 13px;
   font-weight: 600;
@@ -338,20 +389,6 @@ nav.main-nav a {
 nav.main-nav a:hover {
   color: var(--white);
   background: rgba(255, 255, 255, 0.08);
-}
-
-nav.main-nav a.active {
-  color: var(--ochre);
-}
-
-nav.main-nav a.active::after {
-  content: "";
-  position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 2px;
-  height: 2px;
-  background: var(--ochre);
 }
 
 .nav-cta {
