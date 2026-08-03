@@ -151,7 +151,7 @@
      parent  → gets .js-stagger class
      item    → selector run on the parent; matches get .js-reveal */
   const staggerTargets = [
-    { parent: '.services-grid',       item: '.service-card'  },
+    { parent: '.services-grid',       item: '.card-link'  },
     { parent: '.values-grid',         item: '.value-item'    },
     { parent: '.gallery-grid',        item: '.gallery-item'  },
     { parent: '.footer-top',          item: ':scope > div'   },
@@ -309,4 +309,18 @@ document.addEventListener('DOMContentLoaded', () => {
       form.reset();
     });
   }
+
+  // ---- 3D Flip Card Mobile Interaction ----
+  const flipCards = document.querySelectorAll('.card-link');
+  flipCards.forEach(card => {
+    card.addEventListener('click', function(e) {
+      if (window.matchMedia('(hover: none)').matches) {
+        if (!this.classList.contains('flipped')) {
+          e.preventDefault();
+          flipCards.forEach(c => c !== this && c.classList.remove('flipped'));
+          this.classList.add('flipped');
+        }
+      }
+    });
+  });
 });
