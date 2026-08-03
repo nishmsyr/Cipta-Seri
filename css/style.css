@@ -177,24 +177,77 @@ section {
 
 header.site-header {
   position: fixed;
-  top: 20px;
+  top: 0;
   left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 1200px;
+  transform: translateX(-50%); 
+  width: 100%;
+  max-width: 100%;             
+  border-radius: 0px;         
   z-index: 1000;
+  
   background: rgba(20, 20, 20, 0.4);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 999px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease,
-    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
+  
+  transition: 
+    top 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    max-width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-radius 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-header.site-header.scrolled {
-  background: rgba(15, 15, 15, 0.65);
+header.site-header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0); /* Standard centered position */
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0;
+  z-index: 1000;
+  
+  background: rgba(20, 20, 20, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  /* Everything transitions smoothly here */
+  transition: 
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    top 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    max-width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-radius 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* 2. Hidden State: Smoothly slides up off-screen when scrolling down */
+header.site-header.scroll-down {
+  transform: translate(-50%, -100%);
+}
+
+/* 3. Scrolled-Up State: Smoothly drops down into a floating island */
+header.site-header.scroll-up {
+  top: 20px;
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 999px;
+  
+  /* Bring it back down onto the screen smoothly */
+  transform: translate(-50%, 0); 
+
+  background: rgba(15, 15, 15, 0.75);
+  border-color: rgba(255, 255, 255, 0.15);
   box-shadow: 0 12px 34px rgba(0, 0, 0, 0.3);
 }
 

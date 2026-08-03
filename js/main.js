@@ -76,6 +76,33 @@
 //  • Staggered grid reveals (service cards, gallery items, values, footer)
 //  All three features respect prefers-reduced-motion.
 // ============================================================
+
+let lastScrollTop = 0;
+const header = document.querySelector('header.site-header');
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  // At the very top of page -> Reset back to full-width header
+  if (currentScroll <= 50) {
+    header.classList.remove('scroll-up', 'scroll-down');
+    return;
+  }
+
+  // Scrolling Down -> Hide the header upward
+  if (currentScroll > lastScrollTop && currentScroll > 100) {
+    header.classList.remove('scroll-up');
+    header.classList.add('scroll-down');
+  } 
+  // Scrolling Up -> Smoothly reveal as a floating island
+  else if (currentScroll < lastScrollTop) {
+    header.classList.remove('scroll-down');
+    header.classList.add('scroll-up');
+  }
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
+
 (function smoothScrollEnhancements() {
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
