@@ -363,18 +363,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ---- contact form (demo only, no backend) ----
-  const form = document.querySelector('.contact-form form');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const status = form.querySelector('.form-status');
-      status.textContent = "Thanks — your message has been noted. Our team will reach out shortly.";
-      status.classList.add('show', 'ok');
-      form.reset();
-    });
-  }
-
   document.querySelectorAll(".slider").forEach(slider => {
 
     const slides = slider.querySelector(".slides");
@@ -433,44 +421,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ---- contact form (live — sends via Web3Forms) ----
-  const form = document.querySelector('.contact-form form');
-  if (form) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const status = form.querySelector('.form-status');
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.textContent;
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Sending…";
-
-      try {
-        const res = await fetch(form.action, {
-          method: "POST",
-          headers: { "Accept": "application/json" },
-          body: new FormData(form)
-        });
-        const data = await res.json();
-
-        if (data.success) {
-          status.textContent = window.CS_T
-            ? window.CS_T("contact.form.status.ok")
-            : "Thanks — your message has been noted. Our team will reach out shortly.";
-          status.classList.remove("error");
-          status.classList.add("show", "ok");
-          form.reset();
-        } else {
-          throw new Error(data.message || "Submission failed");
-        }
-      } catch (err) {
-        status.textContent = "Something went wrong — please try again, or contact us directly by phone or WhatsApp.";
-        status.classList.remove("ok");
-        status.classList.add("show", "error");
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalBtnText;
-      }
-    });
-  }
+  
 });
