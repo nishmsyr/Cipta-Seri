@@ -17,14 +17,15 @@
     </a>
     <nav class="main-nav">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="service.html" class="active">Service</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="service.html" class="active" data-i18n="nav.service">Service</a></li>
+        <li><a href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact Us</a></li>
       </ul>
     </nav>
     <div class="nav-cta">
-      <a href="contact.html" class="btn outline">Get a Quote</a>
+      <button id="lang-toggle" aria-label="Switch to Bahasa Melayu">BM</button>
+      <a href="contact.html" class="btn outline" data-i18n="nav.quote">Get a Quote</a>
       <button class="menu-toggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -43,18 +44,18 @@
   <span class="corner-tick tl"></span>
   <span class="corner-tick tr"></span>
   <div class="hero-inner">
-    <div class="hero-tag">Our Services</div>
-    <h1><em>Professional</em> <br> services for a beautiful, functional space.</h1>
-    <p style="color: #eae9e4af;">From building custom homes to custom cabinetry, painting, and utility installations, 
+    <div class="hero-tag" data-i18n="sp.eyebrow">Our Services</div>
+    <h1 data-i18n="sp.h1"><em>Professional</em> <br> services for a beautiful, functional space.</h1>
+    <p style="color: #eae9e4af;" data-i18n="sp.p">From building custom homes to custom cabinetry, painting, and utility installations, 
       we handle the full spectrum of contracting works under one seamless schedule.</p>
-    <div class="breadcrumb"><a href="index.html">Home</a> / <span>Service</span></div>
+    <div class="breadcrumb"><a href="index.html" data-i18n="breadcrumb.home">Home</a> / <span data-i18n="breadcrumb.service">Service</span></div>
   </div>
   <div class="hero-strip">
     <div class="container">
-      <div class="stat"><b><span data-count="480" data-suffix="+">0</span></b><span>Projects Delivered</span></div>
-      <div class="stat"><b><span data-count="12" data-suffix="yrs">0</span></b><span>Years In Practice</span></div>
-      <div class="stat"><b><span data-count="35" data-suffix="+">0</span></b><span>Specialists On Team</span></div>
-      <div class="stat"><b><span data-count="97" data-suffix="%">0</span></b><span>Clients Who Return</span></div>
+      <div class="stat"><b><span data-count="480" data-suffix="+">0</span></b><span data-i18n="stat.projects">Projects Delivered</span></div>
+      <div class="stat"><b><span data-count="12" data-suffix="yrs">0</span></b><span data-i18n="stat.years">Years In Practice</span></div>
+      <div class="stat"><b><span data-count="35" data-suffix="+">0</span></b><span data-i18n="stat.team">Specialists On Team</span></div>
+      <div class="stat"><b><span data-count="97" data-suffix="%">0</span></b><span data-i18n="stat.clients">Clients Who Return</span></div>
     </div>
   </div>
 </section>
@@ -63,10 +64,10 @@
   <div class="container">
     <div class="split">
       <div>
-        <div class="eyebrow">House Construction</div>
-        <h2>Custom Residential Spaces</h2>
-        <p>Constructing custom residential spaces from foundation to roof, tailored to your lifestyle, preferences, and budget. Every home is carefully planned to maximize functionality, comfort, and long-term value while reflecting your unique vision.</p>
-        <p>From site preparation and structural construction to roofing, finishes, and final inspections, our experienced team manages every stage of the project with precision. We are committed to quality craftsmanship, transparent communication, and delivering your new home on time and within budget.</p>
+        <div class="eyebrow" data-i18n="sp.const.eyebrow">House Construction</div>
+        <h2 data-i18n="sp.const.h2">Custom Residential Spaces</h2>
+        <p data-i18n="sp.const.p1">Constructing custom residential spaces from foundation to roof, tailored to your lifestyle, preferences, and budget. Every home is carefully planned to maximize functionality, comfort, and long-term value while reflecting your unique vision.</p>
+        <p data-i18n="sp.const.p2">From site preparation and structural construction to roofing, finishes, and final inspections, our experienced team manages every stage of the project with precision. We are committed to quality craftsmanship, transparent communication, and delivering your new home on time and within budget.</p>
       </div>
       <div class="split-media">
         <div class="slider">
@@ -109,10 +110,10 @@
         </div>
       </div>
       <div>
-        <div class="eyebrow">Renovation</div>
-        <h2>Complete Renovation Services</h2>
-        <p>Complete house renovations, room extensions, structural upgrades, and commercial remodeling designed to enhance both the functionality and appearance of your property. Whether you're modernizing an outdated space, expanding your home, or transforming a commercial unit, we provide practical solutions tailored to your needs and budget.</p>
-        <p>Our experienced team carefully manages every stage of the renovation process, from planning and demolition to construction, finishing, and final inspections. With quality workmanship, reliable project management, and attention to every detail, we ensure a smooth renovation experience while delivering results that improve the value, comfort, and longevity of your property.</p>
+        <div class="eyebrow" data-i18n="sp.reno.eyebrow">Renovation</div>
+        <h2 data-i18n="sp.reno.h2">Complete Renovation Services</h2>
+        <p data-i18n="sp.reno.p1">Complete house renovations, room extensions, structural upgrades, and commercial remodeling designed to enhance both the functionality and appearance of your property. Whether you're modernizing an outdated space, expanding your home, or transforming a commercial unit, we provide practical solutions tailored to your needs and budget.</p>
+        <p data-i18n="sp.reno.p2">Our experienced team carefully manages every stage of the renovation process, from planning and demolition to construction, finishing, and final inspections. With quality workmanship, reliable project management, and attention to every detail, we ensure a smooth renovation experience while delivering results that improve the value, comfort, and longevity of your property.</p>
       </div>
     </div>
   </div>
@@ -122,10 +123,10 @@
   <div class="container">
     <div class="split reverse">
       <div>
-        <div class="eyebrow">Custom Cabinet</div>
-        <h2>Custom Cabinetry Solutions</h2>
-        <p>We design and build custom kitchen cabinets, built-in wardrobes, TV consoles, and bespoke wood furniture tailored to your space and lifestyle. Every piece is carefully measured and crafted to maximize storage, functionality, and visual appeal.</p>
-        <p>From material selection to fabrication and installation, our in-house team ensures precision at every stage. Using quality workmanship and durable materials, we create custom cabinetry that combines lasting performance with timeless design.</p>
+        <div class="eyebrow" data-i18n="sp.cab.eyebrow">Custom Cabinet</div>
+        <h2 data-i18n="sp.cab.h2">Custom Cabinetry Solutions</h2>
+        <p data-i18n="sp.cab.p1">We design and build custom kitchen cabinets, built-in wardrobes, TV consoles, and bespoke wood furniture tailored to your space and lifestyle. Every piece is carefully measured and crafted to maximize storage, functionality, and visual appeal.</p>
+        <p data-i18n="sp.cab.p2">From material selection to fabrication and installation, our in-house team ensures precision at every stage. Using quality workmanship and durable materials, we create custom cabinetry that combines lasting performance with timeless design.</p>
       </div>
       <div class="split-media">
         <div class="slider">
@@ -167,10 +168,10 @@
   </div>
       </div>
       <div>
-        <div class="eyebrow">Curtain</div>
-        <h2>Custom Curtains & Blinds</h2>
-        <p>Enhance your home with custom curtains, drapes, blinds, and premium-quality fabrics designed to complement your interior style. We offer a wide selection of materials, colors, and finishes to create window treatments that provide both elegance and everyday functionality.</p>
-        <p>From on-site measurements to fabrication and professional installation, our team ensures a perfect fit and flawless finish. Every curtain and blind is tailored to your space, delivering comfort, privacy, and a refined look that completes your interior.</p>
+        <div class="eyebrow" data-i18n="sp.curt.eyebrow">Curtain</div>
+        <h2 data-i18n="sp.curt.h2">Custom Curtains & Blinds</h2>
+        <p data-i18n="sp.curt.p1">Enhance your home with custom curtains, drapes, blinds, and premium-quality fabrics designed to complement your interior style. We offer a wide selection of materials, colors, and finishes to create window treatments that provide both elegance and everyday functionality.</p>
+        <p data-i18n="sp.curt.p2">From on-site measurements to fabrication and professional installation, our team ensures a perfect fit and flawless finish. Every curtain and blind is tailored to your space, delivering comfort, privacy, and a refined look that completes your interior.</p>
       </div>
     </div>
   </div>
@@ -180,10 +181,10 @@
   <div class="container">
     <div class="split reverse">
       <div>
-        <div class="eyebrow">Electrical & Plumbing</div>
-        <h2>Reliable Electrical & Plumbing Services</h2>
-        <p>We provide safe and reliable electrical and plumbing services, including electrical wiring, custom lighting installations, plumbing repairs, and new pipe installations for residential and commercial properties. Every project is carried out with precision to ensure safety, efficiency, and long-term performance.</p>
-        <p>Our experienced technicians use quality materials and industry-approved practices to deliver dependable results that meet your requirements. Whether it's a new installation, system upgrade, or repair work, we complete every job with professionalism, attention to detail, and minimal disruption to your property.</p>
+        <div class="eyebrow" data-i18n="sp.plumb.eyebrow">Electrical & Plumbing</div>
+        <h2 data-i18n="sp.plumb.h2">Reliable Electrical & Plumbing Services</h2>
+        <p data-i18n="sp.plumb.p1">We provide safe and reliable electrical and plumbing services, including electrical wiring, custom lighting installations, plumbing repairs, and new pipe installations for residential and commercial properties. Every project is carried out with precision to ensure safety, efficiency, and long-term performance.</p>
+        <p data-i18n="sp.plumb.p2">Our experienced technicians use quality materials and industry-approved practices to deliver dependable results that meet your requirements. Whether it's a new installation, system upgrade, or repair work, we complete every job with professionalism, attention to detail, and minimal disruption to your property.</p>
       </div>
       <div class="split-media">
         <div class="slider">
@@ -225,10 +226,10 @@
   </div>
       </div>
       <div>
-        <div class="eyebrow">Painting</div>
-        <h2>Professional Wall Coating Services</h2>
-        <p>Flawless results begin with proper surface preparation. Professional painters thoroughly clean, repair, and prime walls before applying any coating. This essential step guarantees a smooth, even finish that adheres properly to both interior and exterior surfaces.</p>
-        <p>High-quality protective paints do more than just look good. Modern exterior and interior coatings shield walls against weather, moisture, fading, and daily wear. Choosing durable finishes protects your property from damage while instantly boosting its overall value.</p>
+        <div class="eyebrow" data-i18n="sp.paint.eyebrow">Painting</div>
+        <h2 data-i18n="sp.paint.h2">Professional Wall Coating Services</h2>
+        <p data-i18n="sp.paint.p1">Flawless results begin with proper surface preparation. Professional painters thoroughly clean, repair, and prime walls before applying any coating. This essential step guarantees a smooth, even finish that adheres properly to both interior and exterior surfaces.</p>
+        <p data-i18n="sp.paint.p2">High-quality protective paints do more than just look good. Modern exterior and interior coatings shield walls against weather, moisture, fading, and daily wear. Choosing durable finishes protects your property from damage while instantly boosting its overall value.</p>
       </div>
     </div>
   </div>
@@ -238,29 +239,29 @@
 <section class="values">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow">Our Team</div>
-      <h2>Led by experienced industry professionals.</h2>
+      <div class="eyebrow" data-i18n="sp.team.eyebrow">Our Team</div>
+      <h2 data-i18n="sp.team.h2">Led by experienced industry professionals.</h2>
     </div>
     <div class="values-grid" style="grid-template-columns:repeat(4,1fr);">
       <div class="value-item">
         <h4>Nurul Hazira bt Hadzir</h4>
-        <p class="role-tag" style="font-family:var(--mono); font-size:12px; color:var(--ochre); margin-bottom:8px; text-transform:uppercase;">Operation Manager</p>
-        <p>Overseeing project operations, materials sourcing, team coordination, and client communications across Selangor.</p>
+        <p class="role-tag" style="font-family:var(--mono); font-size:12px; color:var(--ochre); margin-bottom:8px; text-transform:uppercase;" data-i18n="sp.team.op_manager">Operation Manager</p>
+        <p data-i18n="sp.team.p1">Overseeing project operations, materials sourcing, team coordination, and client communications across Selangor.</p>
       </div>
       <div class="value-item">
         <h4>Siti Aishah At-thahirah</h4>
-        <p class="role-tag" style="font-family:var(--mono); font-size:12px; color:var(--ochre); margin-bottom:8px; text-transform:uppercase;">Operation Manager</p>
-        <p>Overseeing project operations, materials sourcing, team coordination, and client communications across Selangor.</p>
+        <p class="role-tag" style="font-family:var(--mono); font-size:12px; color:var(--ochre); margin-bottom:8px; text-transform:uppercase;" data-i18n="sp.team.op_manager">Operation Manager</p>
+        <p data-i18n="sp.team.p1">Overseeing project operations, materials sourcing, team coordination, and client communications across Selangor.</p>
       </div>
       <div class="value-item">
-        <h4>Custom Carpentry Crew</h4>
-        <p class="role-tag" style="font-family:var(--mono); font-size:12px; color:var(--ochre); margin-bottom:8px; text-transform:uppercase;">In-house Fabricators</p>
-        <p>Our custom cabinet and curtain makers who manufacture and install beautiful, bespoke built-ins.</p>
+        <h4 data-i18n="sp.team.crew1">Custom Carpentry Crew</h4>
+        <p class="role-tag" style="font-family:var(--mono); font-size:12px; color:var(--ochre); margin-bottom:8px; text-transform:uppercase;" data-i18n="sp.team.fabricators">In-house Fabricators</p>
+        <p data-i18n="sp.team.p2">Our custom cabinet and curtain makers who manufacture and install beautiful, bespoke built-ins.</p>
       </div>
       <div class="value-item">
-        <h4>Builders &amp; M&amp;E Crew</h4>
-        <p class="role-tag" style="font-family:var(--mono); font-size:12px; color:var(--ochre); margin-bottom:8px; text-transform:uppercase;">Construction &amp; Utilities</p>
-        <p>Experienced bricklayers, plumbers, electricians, and painters who execute the physical build to high standards.</p>
+        <h4 data-i18n="sp.team.crew2">Builders &amp; M&amp;E Crew</h4>
+        <p class="role-tag" style="font-family:var(--mono); font-size:12px; color:var(--ochre); margin-bottom:8px; text-transform:uppercase;" data-i18n="sp.team.utilities">Construction &amp; Utilities</p>
+        <p data-i18n="sp.team.p3">Experienced bricklayers, plumbers, electricians, and painters who execute the physical build to high standards.</p>
       </div>
     </div>
   </div>
@@ -268,8 +269,8 @@
 
 <section class="cta-band">
   <div class="container">
-    <h2>Want to know if we're a fit for your project?</h2>
-    <a href="contact.html" class="btn">Get In Touch</a>
+    <h2 data-i18n="sp.cta.h2">Want to know if we're a fit for your project?</h2>
+    <a href="contact.html" class="btn" data-i18n="sp.cta.btn">Get In Touch</a>
   </div>
 </section>
 
@@ -277,31 +278,31 @@
   <div class="container footer-top">
     <div>
       <div class="footer-brand"><img src="images/cipta-seri.png" alt="Cipta Seri Resources Logo" class="logo-mark"><span>CIPTA SERI</span></div>
-      <p style="max-width:32ch; font-size:14px; color:#888787;">House construction, renovation, custom cabinetry, curtains, M&amp;E, and painting based in Klang, Selangor.</p>
+      <p style="max-width:32ch; font-size:14px; color:#888787;" data-i18n="footer.tagline">House construction, renovation, custom cabinetry, curtains, M&amp;E, and painting based in Klang, Selangor.</p>
     </div>
     <div>
-      <h5>Site</h5>
+      <h5 data-i18n="footer.site">Site</h5>
       <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#about-preview">About Us</a></li>
-        <li><a href="service.html">Service</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="index.html#about-preview" data-i18n="about.eyebrow">About Us</a></li>
+        <li><a href="service.html" data-i18n="nav.service">Service</a></li>
+        <li><a href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact Us</a></li>
       </ul>
     </div>
     <div>
-      <h5>Services</h5>
+      <h5 data-i18n="footer.services">Services</h5>
       <ul class="footer-links">
-        <li><a href="service.html#construction">House Construction</a></li>
-        <li><a href="service.html#renovation">Renovation</a></li>
-        <li><a href="service.html#cabinet">Custom Cabinet</a></li>
-        <li><a href="service.html#curtain">Curtain</a></li>
-        <li><a href="service.html#plumbing">Electrical & Plumbing</a></li>
-        <li><a href="service.html#painting">Painting</a></li>
+        <li><a href="service.html#construction" data-i18n="services.s1.h3">House Construction</a></li>
+        <li><a href="service.html#renovation" data-i18n="services.s2.h3">Renovation</a></li>
+        <li><a href="service.html#cabinet" data-i18n="services.s3.h3">Custom Cabinet</a></li>
+        <li><a href="service.html#curtain" data-i18n="services.s4.h3">Curtain</a></li>
+        <li><a href="service.html#plumbing" data-i18n="services.s5.h3">Electrical & Plumbing</a></li>
+        <li><a href="service.html#painting" data-i18n="services.s6.h3">Painting</a></li>
       </ul>
     </div>
     <div>
-      <h5>Contact</h5>
+      <h5 data-i18n="footer.contact">Contact</h5>
       <ul class="footer-links">
         <li>Lot 6599, Jalan Kampung Delek Kiri, 41250 Klang, Selangor</li>
         <li>ciptaseriresources@gmail.com</li>
@@ -310,10 +311,11 @@
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>© 2026 Cipta Seri Resources. All rights reserved.</span>
+    <span data-i18n="footer.copy">© 2026 Cipta Seri Resources. All rights reserved.</span>
   </div>
 </footer>
 
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

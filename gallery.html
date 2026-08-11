@@ -17,14 +17,15 @@
     </a>
     <nav class="main-nav">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="service.html">Service</a></li>
-        <li><a href="gallery.html" class="active">Gallery</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="service.html" data-i18n="nav.service">Service</a></li>
+        <li><a href="gallery.html" class="active" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact Us</a></li>
       </ul>
     </nav>
     <div class="nav-cta">
-      <a href="contact.html" class="btn outline">Get a Quote</a>
+      <button id="lang-toggle" aria-label="Switch to Bahasa Melayu">BM</button>
+      <a href="contact.html" class="btn outline" data-i18n="nav.quote">Get a Quote</a>
       <button class="menu-toggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -34,68 +35,68 @@
 
 <section class="page-header">
   <div class="container">
-    <div class="eyebrow">Gallery</div>
-    <h1>A look at spaces we've completed.</h1>
-    <p>Filter by category to see recent renovation, interior and exterior facade projects across Selangor.</p>
-    <div class="breadcrumb"><a href="index.html">Home</a> / <span>Gallery</span></div>
+    <div class="eyebrow" data-i18n="gp.eyebrow">Gallery</div>
+    <h1 data-i18n="gp.h1">A look at spaces we've completed.</h1>
+    <p data-i18n="gp.p">Filter by category to see recent renovation, interior and exterior facade projects across Selangor.</p>
+    <div class="breadcrumb"><a href="index.html" data-i18n="breadcrumb.home">Home</a> / <span data-i18n="breadcrumb.gallery">Gallery</span></div>
   </div>
 </section>
 
 <section>
   <div class="container">
     <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="building">House Construction</button>
-      <button class="filter-btn" data-filter="renovation">Renovation</button>
-      <button class="filter-btn" data-filter="cabinetry">Cabinet &amp; Curtain</button>
-      <button class="filter-btn" data-filter="utilities">Utilities &amp; Painting</button>
+      <button class="filter-btn active" data-filter="all" data-i18n="gp.filter.all">All Projects</button>
+      <button class="filter-btn" data-filter="building" data-i18n="gp.filter.building">House Construction</button>
+      <button class="filter-btn" data-filter="renovation" data-i18n="gp.filter.reno">Renovation</button>
+      <button class="filter-btn" data-filter="cabinetry" data-i18n="gp.filter.cabinet">Cabinet &amp; Curtain</button>
+      <button class="filter-btn" data-filter="utilities" data-i18n="gp.filter.utilities">Utilities &amp; Painting</button>
     </div>
 
     <div class="gallery-grid">
       <div class="gallery-item" data-category="cabinetry">
         <img src="images/living-room-example.jpg" alt="Modern living room interior custom cabinetry with warm wood tones">
-        <span class="tag">Cabinetry</span>
-        <span class="cap">Living Room — Seksyen 7 Residence</span>
+        <span class="tag" data-i18n="gp.tag.cab">Cabinetry</span>
+        <span class="cap" data-i18n="gp.cap.1">Living Room — Seksyen 7 Residence</span>
       </div>
       <div class="gallery-item" data-category="building">
         <img src="images/gallery-02.jpg" alt="Custom house facade building with stone cladding and entrance canopy">
-        <span class="tag">House Construction</span>
-        <span class="cap">Facade Upgrade — Denai Alam</span>
+        <span class="tag" data-i18n="gp.tag.const">House Construction</span>
+        <span class="cap" data-i18n="gp.cap.2">Facade Upgrade — Denai Alam</span>
       </div>
       <div class="gallery-item" data-category="cabinetry">
         <img src="images/gallery-03.jpg" alt="Custom kitchen cabinetry in matte black and oak finish">
-        <span class="tag">Cabinetry</span>
-        <span class="cap">Kitchen Cabinets — Bukit Rimau</span>
+        <span class="tag" data-i18n="gp.tag.cab">Cabinetry</span>
+        <span class="cap" data-i18n="gp.cap.3">Kitchen Cabinets — Bukit Rimau</span>
       </div>
       <div class="gallery-item" data-category="renovation">
         <img src="images/gallery-04.jpg" alt="Under construction renovation showing structural extension">
-        <span class="tag">Renovation</span>
-        <span class="cap">Extension Works — Kota Kemuning</span>
+        <span class="tag" data-i18n="gp.tag.reno">Renovation</span>
+        <span class="cap" data-i18n="gp.cap.4">Extension Works — Kota Kemuning</span>
       </div>
       <div class="gallery-item" data-category="cabinetry">
         <img src="images/gallery-05.jpg" alt="Home office cabinetry with built-in shelving and custom desk">
-        <span class="tag">Cabinetry</span>
-        <span class="cap">Home Office Fit-Out — Setia Alam</span>
+        <span class="tag" data-i18n="gp.tag.cab">Cabinetry</span>
+        <span class="cap" data-i18n="gp.cap.5">Home Office Fit-Out — Setia Alam</span>
       </div>
       <div class="gallery-item" data-category="renovation">
         <img src="images/gallery-06.jpg" alt="Renovation steel gate and grille installation at residential entrance">
-        <span class="tag">Renovation</span>
-        <span class="cap">Steel Gate Works — Puncak Alam</span>
+        <span class="tag" data-i18n="gp.tag.reno">Renovation</span>
+        <span class="cap" data-i18n="gp.cap.6">Steel Gate Works — Puncak Alam</span>
       </div>
       <div class="gallery-item" data-category="cabinetry">
         <img src="images/gallery-07.jpg" alt="Built-in wardrobe cabinetry with sliding doors in bedroom">
-        <span class="tag">Cabinetry</span>
-        <span class="cap">Wardrobe Build — Alam Impian</span>
+        <span class="tag" data-i18n="gp.tag.cab">Cabinetry</span>
+        <span class="cap" data-i18n="gp.cap.7">Wardrobe Build — Alam Impian</span>
       </div>
       <div class="gallery-item" data-category="renovation">
         <img src="images/gallery-08.jpg" alt="Renovated commercial retail unit interior">
-        <span class="tag">Renovation</span>
-        <span class="cap">Retail Unit — Glenmarie</span>
+        <span class="tag" data-i18n="gp.tag.reno">Renovation</span>
+        <span class="cap" data-i18n="gp.cap.8">Retail Unit — Glenmarie</span>
       </div>
       <div class="gallery-item" data-category="utilities">
         <img src="images/gallery-09.jpg" alt="Prayer room painting and custom electrical lighting work">
-        <span class="tag">Painting &amp; M&amp;E</span>
-        <span class="cap">Prayer Room — Private Residence</span>
+        <span class="tag" data-i18n="gp.tag.paint">Painting &amp; M&amp;E</span>
+        <span class="cap" data-i18n="gp.cap.9">Prayer Room — Private Residence</span>
       </div>
     </div>
   </div>
@@ -103,8 +104,8 @@
 
 <section class="cta-band">
   <div class="container">
-    <h2>Like what you see? Let's plan yours.</h2>
-    <a href="contact.html" class="btn">Start A Project</a>
+    <h2 data-i18n="gp.cta.h2">Like what you see? Let's plan yours.</h2>
+    <a href="contact.html" class="btn" data-i18n="gp.cta.btn">Start A Project</a>
   </div>
 </section>
 
@@ -118,31 +119,31 @@
   <div class="container footer-top">
     <div>
       <div class="footer-brand"><img src="images/cipta-seri.png" alt="Cipta Seri Resources Logo" class="logo-mark"><span>CIPTA SERI</span></div>
-      <p style="max-width:32ch; font-size:14px; color: #888787;">House construction, renovation, custom cabinetry, curtains, M&amp;E, and painting based in Klang, Selangor.</p>
+      <p style="max-width:32ch; font-size:14px; color: #888787;" data-i18n="footer.tagline">House construction, renovation, custom cabinetry, curtains, M&amp;E, and painting based in Klang, Selangor.</p>
     </div>
     <div>
-      <h5>Site</h5>
+      <h5 data-i18n="footer.site">Site</h5>
       <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#about-preview">About Us</a></li>
-        <li><a href="service.html">Service</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="index.html#about-preview" data-i18n="about.eyebrow">About Us</a></li>
+        <li><a href="service.html" data-i18n="nav.service">Service</a></li>
+        <li><a href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact Us</a></li>
       </ul>
     </div>
     <div>
-      <h5>Services</h5>
+      <h5 data-i18n="footer.services">Services</h5>
       <ul class="footer-links">
-        <li><a href="service.html#construction">House Construction</a></li>
-        <li><a href="service.html#renovation">Renovation</a></li>
-        <li><a href="service.html#cabinet">Custom Cabinet</a></li>
-        <li><a href="service.html#curtain">Curtain</a></li>
-        <li><a href="service.html#plumbing">Electrical & Plumbing</a></li>
-        <li><a href="service.html#painting">Painting</a></li>
+        <li><a href="service.html#construction" data-i18n="services.s1.h3">House Construction</a></li>
+        <li><a href="service.html#renovation" data-i18n="services.s2.h3">Renovation</a></li>
+        <li><a href="service.html#cabinet" data-i18n="services.s3.h3">Custom Cabinet</a></li>
+        <li><a href="service.html#curtain" data-i18n="services.s4.h3">Curtain</a></li>
+        <li><a href="service.html#plumbing" data-i18n="services.s5.h3">Electrical & Plumbing</a></li>
+        <li><a href="service.html#painting" data-i18n="services.s6.h3">Painting</a></li>
       </ul>
     </div>
     <div>
-      <h5>Contact</h5>
+      <h5 data-i18n="footer.contact">Contact</h5>
       <ul class="footer-links">
         <li>Lot 6599, Jalan Kampung Delek Kiri, 41250 Klang, Selangor</li>
         <li>ciptaseriresources@gmail.com</li>
@@ -151,10 +152,11 @@
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>© 2026 Cipta Seri Resources. All rights reserved.</span>
+    <span data-i18n="footer.copy">© 2026 Cipta Seri Resources. All rights reserved.</span>
   </div>
 </footer>
 
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

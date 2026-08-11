@@ -18,14 +18,15 @@
     </a>
     <nav class="main-nav">
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="service.html">Service</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="index.html" class="active" data-i18n="nav.home">Home</a></li>
+        <li><a href="service.html" data-i18n="nav.service">Service</a></li>
+        <li><a href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact Us</a></li>
       </ul>
     </nav>
     <div class="nav-cta">
-      <a href="contact.html" class="btn outline">Get a Quote</a>
+      <button id="lang-toggle" aria-label="Switch to Bahasa Melayu">BM</button>
+      <a href="contact.html" class="btn outline" data-i18n="nav.quote">Get a Quote</a>
       <button class="menu-toggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -44,20 +45,20 @@
   <span class="corner-tick tl"></span>
   <span class="corner-tick tr"></span>
   <div class="hero-inner">
-    <div class="hero-tag">KLANG, SELANGOR · HOUSE BUILDING &amp; RENOVATION</div>
-    <h1>We draft it,<br>we build it, <em>we finish it.</em></h1>
-    <p class="lede">Cipta Seri Resources plans and builds house construction, renovation, custom cabinets, curtains, and utility work from first sketch to final handover, one team, from start to finish.</p>
+    <div class="hero-tag" data-i18n="hero.tag">KLANG, SELANGOR · HOUSE BUILDING &amp; RENOVATION</div>
+    <h1 data-i18n="hero.h1">We draft it,<br>we build it, <em>we finish it.</em></h1>
+    <p class="lede" data-i18n="hero.lede">Cipta Seri Resources plans and builds house construction, renovation, custom cabinets, curtains, and utility work from first sketch to final handover, one team, from start to finish.</p>
     <div class="hero-actions">
-      <a href="contact.html" class="btn">Request a Quotation</a>
-      <a href="service.html" class="btn outline">View Our Services</a>
+      <a href="contact.html" class="btn" data-i18n="hero.cta1">Request a Quotation</a>
+      <a href="service.html" class="btn outline" data-i18n="hero.cta2">View Our Services</a>
     </div>
   </div>
   <div class="hero-strip">
     <div class="container">
-      <div class="stat"><b><span data-count="480" data-suffix="+">0</span></b><span>Projects Delivered</span></div>
-      <div class="stat"><b><span data-count="12" data-suffix="yrs">0</span></b><span>Years In Practice</span></div>
-      <div class="stat"><b><span data-count="35" data-suffix="+">0</span></b><span>Specialists On Team</span></div>
-      <div class="stat"><b><span data-count="97" data-suffix="%">0</span></b><span>Clients Who Return</span></div>
+      <div class="stat"><b><span data-count="480" data-suffix="+">0</span></b><span data-i18n="stat.projects">Projects Delivered</span></div>
+      <div class="stat"><b><span data-count="12" data-suffix="yrs">0</span></b><span data-i18n="stat.years">Years In Practice</span></div>
+      <div class="stat"><b><span data-count="35" data-suffix="+">0</span></b><span data-i18n="stat.team">Specialists On Team</span></div>
+      <div class="stat"><b><span data-count="97" data-suffix="%">0</span></b><span data-i18n="stat.clients">Clients Who Return</span></div>
     </div>
   </div>
 </section>
@@ -66,10 +67,10 @@
   <div class="container">
     <div class="split">
       <div class="about-content">
-        <div class="eyebrow">About Us</div>
-        <h2 class="about-heading"><em>D</em>ESIGN WITH<br>INTENTION</h2>
-        <p>At Cipta Seri, we believe that interior design is not just about how a space looks &ndash; it's about how it makes you feel. We approach each project as a layered composition of light, form, and purpose, where clarity meets quiet beauty.</p>
-        <a href="service.html" class="link-arrow">LEARN MORE <span>&rarr;</span></a>
+        <div class="eyebrow" data-i18n="about.eyebrow">About Us</div>
+        <h2 class="about-heading" data-i18n="about.h2"><em>D</em>ESIGN WITH<br>INTENTION</h2>
+        <p data-i18n="about.p">At Cipta Seri, we believe that interior design is not just about how a space looks &ndash; it's about how it makes you feel. We approach each project as a layered composition of light, form, and purpose, where clarity meets quiet beauty.</p>
+        <a href="service.html" class="link-arrow"><span data-i18n="about.link">LEARN MORE</span> <span>&rarr;</span></a>
       </div>
       <div class="about-collage">
         <div class="collage-img main-img">
@@ -86,21 +87,21 @@
 <section id="service-teaser">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow">What We Do</div>
-      <h2>Every trade your home needs, under one roof.</h2>
-      <p>From structural building to the final paintbrush stroke. We scope, build, and supervise each stage so you never have to coordinate separate contractors.</p>
+      <div class="eyebrow" data-i18n="services.eyebrow">What We Do</div>
+      <h2 data-i18n="services.h2">Every trade your home needs, under one roof.</h2>
+      <p data-i18n="services.p">From structural building to the final paintbrush stroke. We scope, build, and supervise each stage so you never have to coordinate separate contractors.</p>
     </div>
     <div class="services-grid">
       <a href="service.html#construction" class="card-link">
         <div class="card-inner">
           <div class="card-front">
             <span class="num">01</span>
-            <h3>House Construction</h3>
-            <p>Constructing custom residential spaces from foundation to roof, designed specifically around your requirements.</p>
+            <h3 data-i18n="services.s1.h3">House Construction</h3>
+            <p data-i18n="services.s1.p">Constructing custom residential spaces from foundation to roof, designed specifically around your requirements.</p>
           </div>
           <div class="card-back" style="background-image: url('images/construction.jpg');">
             <div class="card-back-overlay">
-              <span>Click to view details &rarr;</span>
+              <span data-i18n="services.click">Click to view details &rarr;</span>
             </div>
           </div>
         </div>
@@ -109,12 +110,12 @@
         <div class="card-inner">
           <div class="card-front">
             <span class="num">02</span>
-            <h3>Renovation</h3>
-            <p>Complete house renovations, room extensions, structural upgrades, and commercial remodeling.</p>
+            <h3 data-i18n="services.s2.h3">Renovation</h3>
+            <p data-i18n="services.s2.p">Complete house renovations, room extensions, structural upgrades, and commercial remodeling.</p>
           </div>
           <div class="card-back" style="background-image: url('images/renovation.jpg');">
             <div class="card-back-overlay">
-              <span>Click to view details &rarr;</span>
+              <span data-i18n="services.click">Click to view details &rarr;</span>
             </div>
           </div>
         </div>
@@ -123,12 +124,12 @@
         <div class="card-inner">
           <div class="card-front">
             <span class="num">03</span>
-            <h3>Custom Cabinet</h3>
-            <p>Kitchen cabinets, built-in wardrobes, TV consoles, and custom wood furniture measured and fitted in-house.</p>
+            <h3 data-i18n="services.s3.h3">Custom Cabinet</h3>
+            <p data-i18n="services.s3.p">Kitchen cabinets, built-in wardrobes, TV consoles, and custom wood furniture measured and fitted in-house.</p>
           </div>
           <div class="card-back" style="background-image: url('images/cabinet.jpg');">
             <div class="card-back-overlay">
-              <span>Click to view details &rarr;</span>
+              <span data-i18n="services.click">Click to view details &rarr;</span>
             </div>
           </div>
         </div>
@@ -137,12 +138,12 @@
         <div class="card-inner">
           <div class="card-front">
             <span class="num">04</span>
-            <h3>Curtain</h3>
-            <p>Custom curtains, drapes, blinds, and high-quality textiles tailored to suit your interior style.</p>
+            <h3 data-i18n="services.s4.h3">Curtain</h3>
+            <p data-i18n="services.s4.p">Custom curtains, drapes, blinds, and high-quality textiles tailored to suit your interior style.</p>
           </div>
           <div class="card-back" style="background-image: url('images/curtain.jpg');">
             <div class="card-back-overlay">
-              <span>Click to view details &rarr;</span>
+              <span data-i18n="services.click">Click to view details &rarr;</span>
             </div>
           </div>
         </div>
@@ -151,12 +152,12 @@
         <div class="card-inner">
           <div class="card-front">
             <span class="num">05</span>
-            <h3>Electrical &amp; Plumbing</h3>
-            <p>Safe electrical wiring, custom lighting setups, plumbing repair, and new pipe installations.</p>
+            <h3 data-i18n="services.s5.h3">Electrical &amp; Plumbing</h3>
+            <p data-i18n="services.s5.p">Safe electrical wiring, custom lighting setups, plumbing repair, and new pipe installations.</p>
           </div>
           <div class="card-back" style="background-image: url('images/plumbing.jpg');">
             <div class="card-back-overlay">
-              <span>Click to view details &rarr;</span>
+              <span data-i18n="services.click">Click to view details &rarr;</span>
             </div>
           </div>
         </div>
@@ -165,19 +166,19 @@
         <div class="card-inner">
           <div class="card-front">
             <span class="num">06</span>
-            <h3>Painting</h3>
-            <p>Professional interior and exterior wall coating, surface preparation, and protective paint finishes.</p>
+            <h3 data-i18n="services.s6.h3">Painting</h3>
+            <p data-i18n="services.s6.p">Professional interior and exterior wall coating, surface preparation, and protective paint finishes.</p>
           </div>
           <div class="card-back" style="background-image: url('images/paint.jpg');">
             <div class="card-back-overlay">
-              <span>Click to view details &rarr;</span>
+              <span data-i18n="services.click">Click to view details &rarr;</span>
             </div>
           </div>
         </div>
       </a>
     </div>
     <div style="text-align:center; margin-top:44px;">
-      <a href="service.html" class="btn outline">See All Services</a>
+      <a href="service.html" class="btn outline" data-i18n="services.all">See All Services</a>
     </div>
   </div>
 </section>
@@ -185,29 +186,29 @@
 <section class="values">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow">Why Choose Cipta Seri</div>
-      <h2>Built on planning, not guesswork.</h2>
+      <div class="eyebrow" data-i18n="values.eyebrow">Why Choose Cipta Seri</div>
+      <h2 data-i18n="values.h2">Built on planning, not guesswork.</h2>
     </div>
     <div class="values-grid">
       <div class="value-item">
-        <h4>Clear Scheduling</h4>
-        <p>A written timeline and resource plan before work begins, not after.</p>
+        <h4 data-i18n="values.v1.h4">Clear Scheduling</h4>
+        <p data-i18n="values.v1.p">A written timeline and resource plan before work begins, not after.</p>
       </div>
       <div class="value-item">
-        <h4>One Point of Contact</h4>
-        <p>A single project lead keeps you updated — no chasing multiple contractors.</p>
+        <h4 data-i18n="values.v2.h4">One Point of Contact</h4>
+        <p data-i18n="values.v2.p">A single project lead keeps you updated — no chasing multiple contractors.</p>
       </div>
       <div class="value-item">
-        <h4>Progress You Can See</h4>
-        <p>Site updates and milestone checks so you always know where the project stands.</p>
+        <h4 data-i18n="values.v3.h4">Progress You Can See</h4>
+        <p data-i18n="values.v3.p">Site updates and milestone checks so you always know where the project stands.</p>
       </div>
       <div class="value-item">
-        <h4>Quality Checks</h4>
-        <p>Every stage is inspected before the next trade begins.</p>
+        <h4 data-i18n="values.v4.h4">Quality Checks</h4>
+        <p data-i18n="values.v4.p">Every stage is inspected before the next trade begins.</p>
       </div>
       <div class="value-item">
-        <h4>On-Time Handover</h4>
-        <p>We build to the schedule we agreed on, and we tell you early if anything shifts.</p>
+        <h4 data-i18n="values.v5.h4">On-Time Handover</h4>
+        <p data-i18n="values.v5.p">We build to the schedule we agreed on, and we tell you early if anything shifts.</p>
       </div>
     </div>
   </div>
@@ -215,8 +216,8 @@
 
 <section class="cta-band">
   <div class="container">
-    <h2>Have a space in mind? Let's put it on paper.</h2>
-    <a href="contact.html" class="btn">Talk To Our Team</a>
+    <h2 data-i18n="cta.h2">Have a space in mind? Let's put it on paper.</h2>
+    <a href="contact.html" class="btn" data-i18n="cta.btn">Talk To Our Team</a>
   </div>
 </section>
 
@@ -224,31 +225,31 @@
   <div class="container footer-top">
     <div>
       <div class="footer-brand"><img src="images/cipta-seri.png" alt="Cipta Seri Resources Logo" class="logo-mark"><span>CIPTA SERI</span></div>
-      <p style="max-width:32ch; font-size:14px; color: #888787;">House construction, renovation, custom cabinetry, curtains, M&amp;E, and painting based in Klang, Selangor.</p>
+      <p style="max-width:32ch; font-size:14px; color: #888787;" data-i18n="footer.tagline">House construction, renovation, custom cabinetry, curtains, M&amp;E, and painting based in Klang, Selangor.</p>
     </div>
     <div>
-      <h5>Site</h5>
+      <h5 data-i18n="footer.site">Site</h5>
       <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#about-preview">About Us</a></li>
-        <li><a href="service.html">Service</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="index.html#about-preview" data-i18n="about.eyebrow">About Us</a></li>
+        <li><a href="service.html" data-i18n="nav.service">Service</a></li>
+        <li><a href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact Us</a></li>
       </ul>
     </div>
     <div>
-      <h5>Services</h5>
+      <h5 data-i18n="footer.services">Services</h5>
       <ul class="footer-links">
-        <li><a href="service.html#construction">House Construction</a></li>
-        <li><a href="service.html#renovation">Renovation</a></li>
-        <li><a href="service.html#cabinet">Custom Cabinet</a></li>
-        <li><a href="service.html#curtain">Curtain</a></li>
-        <li><a href="service.html#plumbing">Electrical & Plumbing</a></li>
-        <li><a href="service.html#painting">Painting</a></li>
+        <li><a href="service.html#construction" data-i18n="services.s1.h3">House Construction</a></li>
+        <li><a href="service.html#renovation" data-i18n="services.s2.h3">Renovation</a></li>
+        <li><a href="service.html#cabinet" data-i18n="services.s3.h3">Custom Cabinet</a></li>
+        <li><a href="service.html#curtain" data-i18n="services.s4.h3">Curtain</a></li>
+        <li><a href="service.html#plumbing" data-i18n="services.s5.h3">Electrical & Plumbing</a></li>
+        <li><a href="service.html#painting" data-i18n="services.s6.h3">Painting</a></li>
       </ul>
     </div>
     <div>
-      <h5>Contact</h5>
+      <h5 data-i18n="footer.contact">Contact</h5>
       <ul class="footer-links">
         <li>Lot 6599, Jalan Kampung Delek Kiri, 41250 Klang, Selangor</li>
         <li>ciptaseriresources@gmail.com</li>
@@ -257,10 +258,11 @@
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>© 2026 Cipta Seri Resources. All rights reserved.</span>
+    <span data-i18n="footer.copy">© 2026 Cipta Seri Resources. All rights reserved.</span>
   </div>
 </footer>
 
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

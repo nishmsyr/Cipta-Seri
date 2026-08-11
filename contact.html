@@ -17,14 +17,15 @@
     </a>
     <nav class="main-nav">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="service.html">Service</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html" class="active">Contact Us</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="service.html" data-i18n="nav.service">Service</a></li>
+        <li><a href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="contact.html" class="active" data-i18n="nav.contact">Contact Us</a></li>
       </ul>
     </nav>
     <div class="nav-cta">
-      <a href="contact.html" class="btn outline">Get a Quote</a>
+      <button id="lang-toggle" aria-label="Switch to Bahasa Melayu">BM</button>
+      <a href="contact.html" class="btn outline" data-i18n="nav.quote">Get a Quote</a>
       <button class="menu-toggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -34,10 +35,10 @@
 
 <section class="page-header">
   <div class="container">
-    <div class="eyebrow">Contact Us</div>
-    <h1>Tell us about your space. We'll take it from there.</h1>
-    <p>Send your project details below, or reach us directly by phone, email or WhatsApp. A site visit is free and comes with no obligation.</p>
-    <div class="breadcrumb"><a href="index.html">Home</a> / <span>Contact Us</span></div>
+    <div class="eyebrow" data-i18n="cp.eyebrow">Contact Us</div>
+    <h1 data-i18n="cp.h1">Tell us about your space. We'll take it from there.</h1>
+    <p data-i18n="cp.p">Send your project details below, or reach us directly by phone, email or WhatsApp. A site visit is free and comes with no obligation.</p>
+    <div class="breadcrumb"><a href="index.html" data-i18n="breadcrumb.home">Home</a> / <span data-i18n="breadcrumb.contact">Contact Us</span></div>
   </div>
 </section>
 
@@ -45,36 +46,36 @@
   <div class="container">
     <div class="contact-wrap">
       <div class="contact-info">
-        <div class="eyebrow">Get In Touch</div>
+        <div class="eyebrow" data-i18n="cp.info.eyebrow">Get In Touch</div>
         <h3>Cipta Seri Resources</h3>
-        <p style="color:rgba(251,249,244,0.75); font-size:14.5px;">Contact Nurul Hazira (Operation Manager) directly, or send us your details using the form. We respond within one business day.</p>
+        <p style="color:rgba(251,249,244,0.75); font-size:14.5px;" data-i18n="cp.info.p">Contact Nurul Hazira (Operation Manager) directly, or send us your details using the form. We respond within one business day.</p>
 
         <div class="info-row">
           <span class="ico"><img src="images/email-gold.png" width="25" height="25"></span>
           <div>
-            <h5>Email</h5>
+            <h5 data-i18n="cp.info.email">Email</h5>
             <p><a href="mailto:ciptaseriresources@gmail.com" style="text-decoration:underline; color:inherit;">ciptaseriresources@gmail.com</a></p>
           </div>
         </div>
         <div class="info-row">
           <span class="ico"><img src="images/phone-gold.png" width="25" height="25"></span>
           <div>
-            <h5>Phone</h5>
+            <h5 data-i18n="cp.info.phone">Phone</h5>
             <p><a href="tel:+601158717974" style="text-decoration:underline; color:inherit;">+6011-58717974</a></p>
           </div>
         </div>
         <div class="info-row">
           <span class="ico"><img src="images/whatsapp-gold.png" width="20" height="20"></span>
           <div>
-            <h5>WhatsApp</h5>
+            <h5 data-i18n="cp.info.whatsapp">WhatsApp</h5>
             <p><a href="https://wa.me/601158717974" target="_blank" rel="noopener noreferrer" style="text-decoration:underline; color:inherit;">+6011-58717974</a></p>
           </div>
         </div>
         <div class="info-row">
           <span class="ico"><img src="images/office-gold.png" width="25" height="25"></span>
           <div>
-            <h5>Office</h5>
-            <p>Lot 6599, Jalan Kampung Delek Kiri,<br>41250 Klang, Selangor</p>
+            <h5 data-i18n="cp.info.office">Office</h5>
+            <p data-i18n="cp.info.address">Lot 6599, Jalan Kampung Delek Kiri,<br>41250 Klang, Selangor</p>
           </div>
         </div>
 
@@ -86,41 +87,41 @@
       </div>
 
       <div class="contact-form">
-        <div class="eyebrow" style="color:var(--ochre);">Send A Message</div>
-        <h3 style="font-size:22px; margin-bottom:26px;">Request a quotation</h3>
+        <div class="eyebrow" style="color:var(--ochre);" data-i18n="cp.form.eyebrow">Send A Message</div>
+        <h3 style="font-size:22px; margin-bottom:26px;" data-i18n="cp.form.h3">Request a quotation</h3>
         <form>
           <div class="form-row">
             <div class="field">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required>
+              <label for="name" data-i18n="cp.form.name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" data-i18n-placeholder="cp.form.pl.name" required>
             </div>
             <div class="field">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="e.g. 012-345 6789" required>
+              <label for="phone" data-i18n="cp.form.phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="e.g. 012-345 6789" data-i18n-placeholder="cp.form.pl.phone" required>
             </div>
           </div>
           <div class="form-row">
             <div class="field">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+              <label for="email" data-i18n="cp.form.email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" data-i18n-placeholder="cp.form.pl.email" required>
             </div>
             <div class="field">
-              <label for="service">Service Needed</label>
+              <label for="service" data-i18n="cp.form.service">Service Needed</label>
               <select id="service" name="service">
-                <option>Renovation</option>
-                <option>Custom Cabinet</option>
-                <option>Curtain</option>
-                <option>Electrical &amp; Plumbing</option>
-                <option>Painting</option>
-                <option>Other / Multiple Services</option>
+                <option data-i18n="cp.form.opt.reno">Renovation</option>
+                <option data-i18n="cp.form.opt.cab">Custom Cabinet</option>
+                <option data-i18n="cp.form.opt.curt">Curtain</option>
+                <option data-i18n="cp.form.opt.plumb">Electrical &amp; Plumbing</option>
+                <option data-i18n="cp.form.opt.paint">Painting</option>
+                <option data-i18n="cp.form.opt.other">Other / Multiple Services</option>
               </select>
             </div>
           </div>
           <div class="field">
-            <label for="message">Project Details</label>
-            <textarea id="message" name="message" placeholder="Tell us about the space, size, and what you'd like done."></textarea>
+            <label for="message" data-i18n="cp.form.message">Project Details</label>
+            <textarea id="message" name="message" placeholder="Tell us about the space, size, and what you'd like done." data-i18n-placeholder="cp.form.pl.message"></textarea>
           </div>
-          <button type="submit" class="btn" style="width:100%; justify-content:center;">Send Message</button>
+          <button type="submit" class="btn" style="width:100%; justify-content:center;" data-i18n="cp.form.submit">Send Message</button>
         </form>
       </div>
     </div>
@@ -130,13 +131,13 @@
 <section style="padding-top:0;">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow">Find Us</div>
-      <h2>Our office in Klang, Selangor</h2>
+      <div class="eyebrow" data-i18n="cp.find.eyebrow">Find Us</div>
+      <h2 data-i18n="cp.find.h2">Our office in Klang, Selangor</h2>
     </div>
     <div class="map-embed">
       <div class="map-info-card">
         <h4 class="card-title">Cipta Seri Resources</h4>
-        <p class="card-address">Lot 6599, Jalan Kampung Delek Kiri, 41250 Klang, Selangor</p>
+        <p class="card-address" data-i18n="cp.info.address">Lot 6599, Jalan Kampung Delek Kiri, 41250 Klang, Selangor</p>
     </div>
       <iframe
         src="https://maps.google.com/maps?q=3.030890,101.413351&hl=en&z=16&output=embed"
@@ -152,31 +153,31 @@
   <div class="container footer-top">
     <div>
       <div class="footer-brand"><img src="images/cipta-seri.png" alt="Cipta Seri Resources Logo" class="logo-mark"><span>CIPTA SERI</span></div>
-      <p style="max-width:32ch; font-size:14px; color: #888787;">House construction, renovation, custom cabinetry, curtains, M&amp;E, and painting based in Klang, Selangor.</p>
+      <p style="max-width:32ch; font-size:14px; color: #888787;" data-i18n="footer.tagline">House construction, renovation, custom cabinetry, curtains, M&amp;E, and painting based in Klang, Selangor.</p>
     </div>
     <div>
-      <h5>Site</h5>
+      <h5 data-i18n="footer.site">Site</h5>
       <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#about-preview">About Us</a></li>
-        <li><a href="service.html">Service</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="index.html#about-preview" data-i18n="about.eyebrow">About Us</a></li>
+        <li><a href="service.html" data-i18n="nav.service">Service</a></li>
+        <li><a href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact Us</a></li>
       </ul>
     </div>
     <div>
-      <h5>Services</h5>
+      <h5 data-i18n="footer.services">Services</h5>
       <ul class="footer-links">
-        <li><a href="service.html#construction">House Construction</a></li>
-        <li><a href="service.html#renovation">Renovation</a></li>
-        <li><a href="service.html#cabinet">Custom Cabinet</a></li>
-        <li><a href="service.html#curtain">Curtain</a></li>
-        <li><a href="service.html#plumbing">Electrical & Plumbing</a></li>
-        <li><a href="service.html#painting">Painting</a></li>
+        <li><a href="service.html#construction" data-i18n="services.s1.h3">House Construction</a></li>
+        <li><a href="service.html#renovation" data-i18n="services.s2.h3">Renovation</a></li>
+        <li><a href="service.html#cabinet" data-i18n="services.s3.h3">Custom Cabinet</a></li>
+        <li><a href="service.html#curtain" data-i18n="services.s4.h3">Curtain</a></li>
+        <li><a href="service.html#plumbing" data-i18n="services.s5.h3">Electrical & Plumbing</a></li>
+        <li><a href="service.html#painting" data-i18n="services.s6.h3">Painting</a></li>
       </ul>
     </div>
     <div>
-      <h5>Contact</h5>
+      <h5 data-i18n="footer.contact">Contact</h5>
       <ul class="footer-links">
         <li>Lot 6599, Jalan Kampung Delek Kiri, 41250 Klang, Selangor</li>
         <li>ciptaseriresources@gmail.com</li>
@@ -185,10 +186,11 @@
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>© 2026 Cipta Seri Resources. All rights reserved.</span>
+    <span data-i18n="footer.copy">© 2026 Cipta Seri Resources. All rights reserved.</span>
   </div>
 </footer>
 
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
