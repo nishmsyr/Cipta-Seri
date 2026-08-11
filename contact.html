@@ -89,7 +89,10 @@
       <div class="contact-form">
         <div class="eyebrow" style="color:var(--ochre);" data-i18n="cp.form.eyebrow">Send A Message</div>
         <h3 style="font-size:22px; margin-bottom:26px;" data-i18n="cp.form.h3">Request a quotation</h3>
-        <form>
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="153f72ef-0788-4934-830f-0da3e1644604">
+          <input type="hidden" name="subject" value="New Quotation Request — Cipta Seri Website">
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none">
           <div class="form-row">
             <div class="field">
               <label for="name" data-i18n="cp.form.name">Full Name</label>
@@ -122,6 +125,7 @@
             <textarea id="message" name="message" placeholder="Tell us about the space, size, and what you'd like done." data-i18n-placeholder="cp.form.pl.message"></textarea>
           </div>
           <button type="submit" class="btn" style="width:100%; justify-content:center;" data-i18n="cp.form.submit">Send Message</button>
+          <p class="form-status" style="margin-top: 15px; font-size: 14px; display: none;"></p>
         </form>
       </div>
     </div>
