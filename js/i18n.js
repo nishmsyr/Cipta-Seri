@@ -1,6 +1,5 @@
 // ============================================================
 //  CIPTA SERI -- Bilingual Language Switcher (EN / MS)
-//  Pure JavaScript -- no API required.
 //  Language preference persists via localStorage across pages.
 // ============================================================
 
@@ -147,15 +146,15 @@ const TRANSLATIONS = {
     'gp.tag.const': 'House Construction',
     'gp.tag.paint': 'Painting & M&E',
     
-    'gp.cap.1': 'Living Room — Seksyen 7 Residence',
-    'gp.cap.2': 'Facade Upgrade — Denai Alam',
-    'gp.cap.3': 'Kitchen Cabinets — Bukit Rimau',
-    'gp.cap.4': 'Extension Works — Kota Kemuning',
-    'gp.cap.5': 'Home Office Fit-Out — Setia Alam',
-    'gp.cap.6': 'Steel Gate Works — Puncak Alam',
-    'gp.cap.7': 'Wardrobe Build — Alam Impian',
-    'gp.cap.8': 'Retail Unit — Glenmarie',
-    'gp.cap.9': 'Prayer Room — Private Residence',
+    'gp.cap.1': 'Bedroom Dressing Table',
+    'gp.cap.2': 'Facade Upgrade',
+    'gp.cap.3': 'Cabinets Upgrade',
+    'gp.cap.4': 'Living Room Renovation',
+    'gp.cap.5': 'Bathroom Utilities',
+    'gp.cap.6': 'Bedroom Vanity',
+    'gp.cap.7': 'Front Facade',
+    'gp.cap.8': 'Room Renovation',
+    'gp.cap.9': 'Balcony Construction',
 
     'gp.cta.h2': "Like what you see? Let's plan yours.",
     'gp.cta.btn': 'Start A Project',
