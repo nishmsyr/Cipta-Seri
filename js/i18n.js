@@ -133,7 +133,7 @@ const TRANSLATIONS = {
 
     // Gallery Page
     'gp.eyebrow':       'Gallery',
-    'gp.h1':            "A look at spaces we've completed.",
+    'gp.h1':            "A look at spaces we've <em>completed.</em>",
     'gp.p':             'Filter by category to see recent renovation, interior and exterior facade projects across Selangor.',
     'gp.filter.all':    'All Projects',
     'gp.filter.building':'House Construction',
@@ -329,7 +329,7 @@ const TRANSLATIONS = {
 
     // Gallery Page
     'gp.eyebrow':       'Galeri',
-    'gp.h1':            'Lihat ruang yang telah kami siapkan.',
+    'gp.h1':            'Lihat ruang yang telah kami <em>siapkan.</em>',
     'gp.p':             'Tapis mengikut kategori untuk melihat projek renovasi, dalaman, dan fasad luaran terkini di seluruh Selangor.',
     'gp.filter.all':    'Semua Projek',
     'gp.filter.building':'Pembinaan Rumah',
