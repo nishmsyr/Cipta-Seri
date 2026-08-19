@@ -89,44 +89,152 @@
       <div class="contact-form">
         <div class="eyebrow" style="color:var(--ochre);" data-i18n="cp.form.eyebrow">Send A Message</div>
         <h3 style="font-size:22px; margin-bottom:26px;" data-i18n="cp.form.h3">Request a quotation</h3>
-        <form action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="153f72ef-0788-4934-830f-0da3e1644604">
-          <input type="hidden" name="subject" value="New Quotation Request — Cipta Seri Website">
-          <input type="checkbox" name="botcheck" class="hidden" style="display:none">
-          <div class="form-row">
-            <div class="field">
-              <label for="name" data-i18n="cp.form.name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" data-i18n-placeholder="cp.form.pl.name" required>
-            </div>
-            <div class="field">
-              <label for="phone" data-i18n="cp.form.phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="e.g. 012-345 6789" data-i18n-placeholder="cp.form.pl.phone" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="field">
-              <label for="email" data-i18n="cp.form.email">Email</label>
-              <input type="email" id="email" name="email" placeholder="you@example.com" data-i18n-placeholder="cp.form.pl.email" required>
-            </div>
-            <div class="field">
-              <label for="service" data-i18n="cp.form.service">Service Needed</label>
-              <select id="service" name="service">
-                <option data-i18n="cp.form.opt.reno">Renovation</option>
-                <option data-i18n="cp.form.opt.cab">Custom Cabinet</option>
-                <option data-i18n="cp.form.opt.curt">Curtain</option>
-                <option data-i18n="cp.form.opt.plumb">Electrical &amp; Plumbing</option>
-                <option data-i18n="cp.form.opt.paint">Painting</option>
-                <option data-i18n="cp.form.opt.other">Other / Multiple Services</option>
-              </select>
-            </div>
-          </div>
-          <div class="field">
-            <label for="message" data-i18n="cp.form.message">Project Details</label>
-            <textarea id="message" name="message" placeholder="Tell us about the space, size, and what you'd like done." data-i18n-placeholder="cp.form.pl.message"></textarea>
-          </div>
-          <button type="submit" class="btn" style="width:100%; justify-content:center;" data-i18n="cp.form.submit">Send Message</button>
-          <p class="form-status" style="margin-top: 15px; font-size: 14px; display: none;"></p>
-        </form>
+  <form
+  id="quotation-form"
+  action="https://script.google.com/macros/s/AKfycbwjxEvWTYy0oxazCvkwVGAA7VPGO7jndzuWJqYycbd86OtGcNiTXQObHHho7ygExinx/exec"
+  method="POST"
+  target="hidden_iframe">
+
+  <input type="hidden" name="subject" value="New Quotation Request — Cipta Seri Website">
+
+  <div class="form-row">
+
+    <div class="field">
+      <label for="name" data-i18n="cp.form.name">Full Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Your name"
+        data-i18n-placeholder="cp.form.pl.name"
+        required
+      >
+    </div>
+
+    <div class="field">
+      <label for="phone" data-i18n="cp.form.phone">Phone Number</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="e.g. 012-345 6789"
+        data-i18n-placeholder="cp.form.pl.phone"
+        required
+      >
+    </div>
+
+  </div>
+
+
+  <div class="form-row">
+
+    <div class="field">
+      <label for="email" data-i18n="cp.form.email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="you@example.com"
+        data-i18n-placeholder="cp.form.pl.email"
+        required
+      >
+    </div>
+
+
+    <div class="field">
+      <label for="service" data-i18n="cp.form.service">Service Needed</label>
+
+      <select id="service" name="service" required>
+        <option value="">Select a service</option>
+        <option value="Renovation" data-i18n="cp.form.opt.reno">Renovation</option>
+        <option value="Custom Cabinet" data-i18n="cp.form.opt.cab">Custom Cabinet</option>
+        <option value="Curtain" data-i18n="cp.form.opt.curt">Curtain</option>
+        <option value="Electrical & Plumbing" data-i18n="cp.form.opt.plumb">
+          Electrical & Plumbing
+        </option>
+        <option value="Painting" data-i18n="cp.form.opt.paint">Painting</option>
+        <option value="Other / Multiple Services" data-i18n="cp.form.opt.other">
+          Other / Multiple Services
+        </option>
+      </select>
+
+    </div>
+
+  </div>
+
+
+  <!-- BUDGET + ADDRESS -->
+
+  <div class="form-row">
+
+    <div class="field">
+      <label for="budget">Estimated Budget</label>
+
+      <select id="budget" name="budget" required>
+        <option value="">Select your budget</option>
+        <option value="Below RM5,000">Below RM5,000</option>
+        <option value="RM5,000 - RM10,000">RM5,000 - RM10,000</option>
+        <option value="RM10,000 - RM20,000">RM10,000 - RM20,000</option>
+        <option value="RM20,000 - RM50,000">RM20,000 - RM50,000</option>
+        <option value="Above RM50,000">Above RM50,000</option>
+        <option value="Not Sure">Not Sure</option>
+      </select>
+    </div>
+
+
+    <div class="field">
+      <label for="address">Project Location / Address</label>
+
+      <input
+        type="text"
+        id="address"
+        name="address"
+        placeholder="e.g. Kajang, Selangor"
+        required
+      >
+    </div>
+
+  </div>
+
+
+  <!-- PROJECT DETAILS -->
+
+  <div class="field">
+    <label for="message" data-i18n="cp.form.message">
+      Project Details
+    </label>
+
+    <textarea
+      id="message"
+      name="message"
+      placeholder="Tell us about the space, size, and what you'd like done."
+      data-i18n-placeholder="cp.form.pl.message"
+    ></textarea>
+  </div>
+
+
+  <button
+  type="submit"
+  id="quotation-submit"
+  class="btn"
+  style="width:100%; justify-content:center;"
+>
+  Send Message
+</button>
+
+  <p
+  class="form-status"
+  id="form-status"
+  style="margin-top:15px; font-size:14px; display:none;"
+></p>
+
+</form>
+
+<iframe
+  name="hidden_iframe"
+  id="hidden_iframe"
+  style="display:none;"
+></iframe>
       </div>
     </div>
   </div>

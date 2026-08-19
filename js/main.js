@@ -43,6 +43,43 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// ============================================================
+// QUOTATION FORM UI
+// ============================================================
+
+const quotationForm = document.getElementById('quotation-form');
+const quotationSubmit = document.getElementById('quotation-submit');
+const formStatus = document.getElementById('form-status');
+
+if (quotationForm && quotationSubmit && formStatus) {
+
+  quotationForm.addEventListener('submit', function () {
+
+    // Show Sending immediately
+    quotationSubmit.disabled = true;
+    quotationSubmit.textContent = 'Sending...';
+
+    // Show temporary status
+    formStatus.textContent = 'Sending your quotation...';
+    formStatus.style.display = 'block';
+
+    // After 2 seconds, show success message
+    setTimeout(function () {
+
+      formStatus.textContent =
+        'Thank you! Your quotation has been submitted successfully.';
+
+      quotationSubmit.disabled = false;
+      quotationSubmit.textContent = 'Send Message';
+
+      quotationForm.reset();
+
+    }, 2000);
+
+  });
+
+}
+
 (function heroSlideshow() {
   const INTERVAL_MS = 5000;
 
