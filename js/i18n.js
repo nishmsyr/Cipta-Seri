@@ -141,10 +141,10 @@ const TRANSLATIONS = {
     'gp.filter.cabinet': 'Cabinetry & Curtains',
     'gp.filter.utilities': 'Utilities & Painting',
 
-    'gp.tag.cab': 'Cabinetry',
+    'gp.tag.cab': 'Cabinetry & Curtains',
     'gp.tag.reno': 'Renovation',
     'gp.tag.const': 'House Construction',
-    'gp.tag.paint': 'Painting & M&E',
+    'gp.tag.utils': 'Utilities & Painting',
 
     'gp.cap.1': 'Bedroom Dressing Table',
     'gp.cap.2': 'Facade Upgrade',
@@ -155,6 +155,9 @@ const TRANSLATIONS = {
     'gp.cap.7': 'Front Facade',
     'gp.cap.8': 'Room Renovation',
     'gp.cap.9': 'Balcony Construction',
+    'gp.cap.10': 'Full Construction',
+    'gp.cap.11': 'Curtain Installation',
+    'gp.cap.12': 'Painting Interior Walls',
 
     'gp.cta.h2': "Inspired by what you see? Let's plan yours.",
     'gp.cta.btn': 'Start a Project',
@@ -351,7 +354,7 @@ const TRANSLATIONS = {
     'gp.filter.cabinet': 'Kabinet & Langsir',
     'gp.filter.utilities': 'Utiliti & Pengecatan',
 
-    'gp.tag.cab': 'Kabinet',
+    'gp.tag.cab': 'Kabinet & Langsir',
     'gp.tag.reno': 'Ubah Suai',
     'gp.tag.const': 'Pembinaan Rumah',
     'gp.tag.paint': 'Pengecatan & M&E',
@@ -365,6 +368,8 @@ const TRANSLATIONS = {
     'gp.cap.7': 'Fasad Hadapan',
     'gp.cap.8': 'Ubah Suai Bilik',
     'gp.cap.9': 'Pembinaan Balkoni',
+    'gp.cap.10': 'Pembinaan Menyeluruh',
+    'gp.cap.11': 'Pemasangan Langsir',
 
     'gp.cta.h2': 'Tergamit dengan hasil kerja kami? Mari rancang ruang anda.',
     'gp.cta.btn': 'Mulakan Projek',
