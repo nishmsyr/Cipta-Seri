@@ -1905,3 +1905,144 @@ textarea:focus-visible {
 .form-status.error {
   color: #b3413d;
 }
+
+/* ============================================================
+   CONTACT FLIP CARD
+   ============================================================ */
+
+/* The outer wrapper takes the same grid cell as .contact-info did */
+.contact-flip-card {
+  position: relative;
+  perspective: 1200px;
+}
+
+.contact-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.72s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-flip-card.is-flipped .contact-flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Both faces share the .contact-info base styles for consistent sizing */
+.contact-flip-front,
+.contact-flip-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Front sits at default (0deg) */
+.contact-flip-front {
+  position: relative;
+  z-index: 1;
+}
+
+/* Back is pre-rotated 180deg — invisible until card flips */
+.contact-flip-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+  overflow-y: auto;
+}
+
+/* ---- Brand header: logo left + company name right ---- */
+.contact-flip-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 4px;
+}
+
+/* Logo container — matches existing icon box proportions */
+.contact-flip-logo {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  border: 1px solid var(--brass);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.contact-flip-logo .logo-placeholder-text {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .06em;
+  color: rgba(251, 249, 244, 0.4);
+}
+
+/* Logo image — drop this in when the real asset is ready */
+.contact-flip-logo img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.contact-flip-company h3 {
+  color: var(--white);
+  font-size: 20px;
+  margin: 0 0 3px;
+}
+
+.contact-flip-subtitle {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+/* ---- Flip trigger — small gold text button, bottom-right ---- */
+.contact-flip-trigger {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact-flip-card .flip-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--brass);
+  transition: color 0.25s ease, letter-spacing 0.25s ease;
+}
+
+.contact-flip-card .flip-btn:hover {
+  color: var(--ochre-dk);
+  letter-spacing: .14em;
+}
+
+/* Compact the back-face info-rows slightly to ensure everything fits */
+.contact-flip-back .info-row {
+  padding: 14px 0;
+}
+
+.contact-flip-back .info-row p {
+  font-size: 13.5px;
+}
+
+/* Mobile: maintain side-by-side logo layout, just scale down */
+@media (max-width: 900px) {
+  .contact-flip-back {
+    position: relative;
+    transform: rotateY(180deg);
+  }
+
+  .contact-flip-inner {
+    /* on mobile the absolute positioning of back face breaks normal flow,
+       so we give the inner a min-height equal to the front */
+    min-height: 100%;
+  }
+}

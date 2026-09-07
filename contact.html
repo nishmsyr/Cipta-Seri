@@ -50,52 +50,121 @@
   <section>
     <div class="container">
       <div class="contact-wrap">
-        <div class="contact-info">
-          <div class="eyebrow" data-i18n="cp.info.eyebrow">Get In Touch</div>
-          <h3>Cipta Seri Resources</h3>
-          <p style="color:rgba(251,249,244,0.75); font-size:14.5px;" data-i18n="cp.info.p">Contact Nurul Hazira
-            (Operation Manager) directly, or send us your details using the form. We respond within one business day.
-          </p>
+        <!-- FLIP CARD WRAPPER -->
+        <div class="contact-flip-card" id="contact-flip-card">
+          <div class="contact-flip-inner">
 
-          <div class="info-row">
-            <span class="ico"><img src="images/email-gold.png" width="25" height="25"></span>
-            <div>
-              <h5 data-i18n="cp.info.email">Email</h5>
-              <p><a href="mailto:ciptaseriresources@gmail.com"
-                  style="text-decoration:underline; color:inherit;">ciptaseriresources@gmail.com</a></p>
-            </div>
-          </div>
-          <div class="info-row">
-            <span class="ico"><img src="images/phone-gold.png" width="25" height="25"></span>
-            <div>
-              <h5 data-i18n="cp.info.phone">Phone</h5>
-              <p><a href="tel:+601158717974" style="text-decoration:underline; color:inherit;">+6011-58717974</a></p>
-            </div>
-          </div>
-          <div class="info-row">
-            <span class="ico"><img src="images/whatsapp-gold.png" width="20" height="20"></span>
-            <div>
-              <h5 data-i18n="cp.info.whatsapp">WhatsApp</h5>
-              <p><a href="https://wa.me/601158717974" target="_blank" rel="noopener noreferrer"
-                  style="text-decoration:underline; color:inherit;">+6011-58717974</a></p>
-            </div>
-          </div>
-          <div class="info-row">
-            <span class="ico"><img src="images/office-gold.png" width="25" height="25"></span>
-            <div>
-              <h5 data-i18n="cp.info.office">Office</h5>
-              <p data-i18n="cp.info.address">Lot 6599, Jalan Kampung Delek Kiri,<br>41250 Klang, Selangor</p>
-            </div>
-          </div>
+            <!-- FRONT: Cipta Seri Resources (unchanged) -->
+            <div class="contact-flip-front contact-info">
+              <div class="eyebrow" data-i18n="cp.info.eyebrow">Get In Touch</div>
+              <h3>Cipta Seri Resources</h3>
+              <p style="color:rgba(251,249,244,0.75); font-size:14.5px;" data-i18n="cp.info.p">Contact Nurul Hazira
+                (Operation Manager) directly, or send us your details using the form. We respond within one business day.
+              </p>
 
-          <div class="social-row">
-            <a href="#" aria-label="Tiktok" style="border-color: transparent"><img src="images/tik-tok.png"></a>
-            <a href="#" aria-label="Instagram" style="border-color: transparent"><img
-                src="images/instagram-logo.png"></a>
-            <a href="https://wa.me/601158717974" aria-label="WhatsApp" style="border-color: transparent"><img
-                src="images/whatsapp-logo.png"></a>
+              <div class="info-row">
+                <span class="ico"><img src="images/email-gold.png" width="25" height="25"></span>
+                <div>
+                  <h5 data-i18n="cp.info.email">Email</h5>
+                  <p><a href="mailto:ciptaseriresources@gmail.com"
+                      style="text-decoration:underline; color:inherit;">ciptaseriresources@gmail.com</a></p>
+                </div>
+              </div>
+              <div class="info-row">
+                <span class="ico"><img src="images/phone-gold.png" width="25" height="25"></span>
+                <div>
+                  <h5 data-i18n="cp.info.phone">Phone</h5>
+                  <p><a href="tel:+601158717974" style="text-decoration:underline; color:inherit;">+6011-58717974</a></p>
+                </div>
+              </div>
+              <div class="info-row">
+                <span class="ico"><img src="images/whatsapp-gold.png" width="20" height="20"></span>
+                <div>
+                  <h5 data-i18n="cp.info.whatsapp">WhatsApp</h5>
+                  <p><a href="https://wa.me/601158717974" target="_blank" rel="noopener noreferrer"
+                      style="text-decoration:underline; color:inherit;">+6011-58717974</a></p>
+                </div>
+              </div>
+              <div class="info-row">
+                <span class="ico"><img src="images/office-gold.png" width="25" height="25"></span>
+                <div>
+                  <h5 data-i18n="cp.info.office">Office</h5>
+                  <p data-i18n="cp.info.address">Lot 6599, Jalan Kampung Delek Kiri,<br>41250 Klang, Selangor</p>
+                </div>
+              </div>
+
+              <div class="social-row">
+                <a href="#" aria-label="Tiktok" style="border-color: transparent"><img src="images/tik-tok.png"></a>
+                <a href="#" aria-label="Instagram" style="border-color: transparent"><img src="images/instagram-logo.png"></a>
+                <a href="https://wa.me/601158717974" aria-label="WhatsApp" style="border-color: transparent"><img src="images/whatsapp-logo.png"></a>
+              </div>
+
+              <div class="contact-flip-trigger" id="flip-to-partner">
+                <button class="flip-btn" aria-label="View HiHome Development — Strategic Partner">OUR PARTNER &rarr;</button>
+              </div>
+            </div>
+            <!-- END FRONT -->
+
+            <!-- BACK: HiHome Development -->
+            <div class="contact-flip-back contact-info">
+              <div class="eyebrow">Strategic Partner</div>
+
+              <!-- Brand header: logo + company name side-by-side -->
+              <div class="contact-flip-brand">
+                <div class="contact-flip-logo">
+                  <span class="logo-placeholder-text">LOGO</span>
+                </div>
+                <div class="contact-flip-company">
+                  <h3>HiHome Development</h3>
+                  <span class="contact-flip-subtitle">Strategic Partner</span>
+                </div>
+              </div>
+
+              <div class="info-row">
+                <span class="ico"><img src="images/email-gold.png" width="25" height="25" alt="Email"></span>
+                <div>
+                  <h5>Email Address</h5>
+                  <p><a href="mailto:hihomedevelopment.malaysia@gmail.com"
+                      style="text-decoration:underline; color:inherit;">hihomedevelopment.malaysia@gmail.com</a></p>
+                </div>
+              </div>
+              <div class="info-row">
+                <span class="ico"><img src="images/phone-gold.png" width="25" height="25" alt="Phone"></span>
+                <div>
+                  <h5>Phone Number</h5>
+                  <p><a href="tel:+601156867288" style="text-decoration:underline; color:inherit;">+601156867288</a></p>
+                </div>
+              </div>
+              <div class="info-row">
+                <span class="ico"><img src="images/whatsapp-gold.png" width="20" height="20" alt="WhatsApp"></span>
+                <div>
+                  <h5>WhatsApp</h5>
+                  <p><a href="https://wa.me/601156867288" target="_blank" rel="noopener noreferrer"
+                      style="text-decoration:underline; color:inherit;">+601156867288</a></p>
+                </div>
+              </div>
+              <div class="info-row">
+                <span class="ico"><img src="images/office-gold.png" width="25" height="25" alt="Address"></span>
+                <div>
+                  <h5>Office Location</h5>
+                  <p>Lot 60728 (B), Jalan TKP 2/1,<br>Taman Koperat Putera,<br>Kampung Raja, Malaysia, 22200</p>
+                </div>
+              </div>
+
+              <div class="social-row">
+                <a href="https://www.facebook.com/p/HiHome-Development-61559677723042/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="border-color: transparent"><img src="images/facebook-logo.png"></a>
+                <a href="https://www.tiktok.com/@hihome.development?_r=1&_t=ZS-99Wq6qGvSxM" target="_blank" rel="noopener noreferrer" aria-label="TikTok" style="border-color: transparent"><img src="images/tik-tok.png"></a>
+              </div>
+
+              <div class="contact-flip-trigger" id="flip-to-cipta">
+                <button class="flip-btn" aria-label="Back to Cipta Seri Resources">&larr; BACK TO CIPTA SERI</button>
+              </div>
+            </div>
+            <!-- END BACK -->
+
           </div>
         </div>
+        <!-- END FLIP CARD -->
 
         <div class="contact-form">
           <div class="eyebrow" style="color:var(--ochre);" data-i18n="cp.form.eyebrow">Send A Message</div>
@@ -274,6 +343,16 @@
 
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var card = document.getElementById('contact-flip-card');
+      var toPartner = document.getElementById('flip-to-partner');
+      var toCipta   = document.getElementById('flip-to-cipta');
+      if (!card || !toPartner || !toCipta) return;
+      toPartner.addEventListener('click', function () { card.classList.add('is-flipped'); });
+      toCipta.addEventListener('click',   function () { card.classList.remove('is-flipped'); });
+    })();
+  </script>
 </body>
 
 </html>
