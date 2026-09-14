@@ -5,24 +5,17 @@ exports.handler = async function (event) {
     if (event.httpMethod !== "POST") {
         return {
             statusCode: 405,
-            headers: {
-                "Content-Type": "text/plain"
-            },
             body: "Method Not Allowed"
         };
     }
 
     try {
 
-        console.log("Received form data:", event.body);
-
         const scriptURL = process.env.GOOGLE_SCRIPT_URL;
 
         if (!scriptURL) {
-            throw new Error("GOOGLE_SCRIPT_URL environment variable is missing.");
+            throw new Error("GOOGLE_SCRIPT_URL is missing");
         }
-
-        console.log("Sending data to Google Apps Script...");
 
         const response = await fetch(scriptURL, {
             method: "POST",
@@ -46,13 +39,10 @@ exports.handler = async function (event) {
 
     } catch (error) {
 
-        console.error("Function error:", error);
+        console.error(error);
 
         return {
             statusCode: 500,
-            headers: {
-                "Content-Type": "text/plain"
-            },
             body: "Submission failed: " + error.message
         };
     }
