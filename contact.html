@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/cipta-seri.png">
   <title>Contact Us — Cipta Seri Resources</title>
   <meta name="description"
     content="Get a home construction or renovation quotation from Cipta Seri Resources. Send us your project details.">
@@ -168,6 +169,11 @@
           <form id="quotation-form"
             action="/.netlify/functions/submit-form"
             method="POST" target="hidden_iframe">
+
+            <div class="honeypot">
+              <label for="website">Website</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
 
             <input type="hidden" name="subject" value="New Quotation Request — Cipta Seri Website">
 

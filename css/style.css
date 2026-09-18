@@ -1650,6 +1650,14 @@ nav.main-nav a:hover {
   }
 }
 
+.honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 .map-embed {
   position: relative;
   width: 100%;
@@ -2045,4 +2053,4 @@ textarea:focus-visible {
        so we give the inner a min-height equal to the front */
     min-height: 100%;
   }
-}
+}
