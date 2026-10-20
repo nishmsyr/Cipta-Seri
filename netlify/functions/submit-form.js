@@ -1,5 +1,5 @@
-exports.handler = async function (event) {
 
+exports.handler = async function (event) {
     if (event.httpMethod !== "POST") {
         return {
             statusCode: 405,
@@ -8,17 +8,20 @@ exports.handler = async function (event) {
     }
 
     try {
+        // Read URL-encoded form data.
+        const rawBody = event.isBase64Encoded
+            ? Buffer.from(event.body || "", "base64").toString("utf8")
+            : (event.body || "");
 
-        const params = new URLSearchParams(event.body || "");
+        const params = new URLSearchParams(rawBody);
 
-        // Honeypot
-        const honeypot = params.get("website");
-
-        if (honeypot) {
+        // Honeypot: silently ignore spam.
+        if ((params.get("website") || "").trim()) {
             console.log("Spam blocked by honeypot");
 
             return {
                 statusCode: 200,
+                headers: { "Content-Type": "text/plain" },
                 body: "Success"
             };
         }
@@ -31,7 +34,7 @@ exports.handler = async function (event) {
         const address = (params.get("address") || "").trim();
         const message = (params.get("message") || "").trim();
 
-        // Required fields
+        // Required fields.
         if (!name || !phone || !email || !service || !budget || !address) {
             return {
                 statusCode: 400,
@@ -39,7 +42,7 @@ exports.handler = async function (event) {
             };
         }
 
-        // Basic email validation
+        // Validate email.
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             return {
                 statusCode: 400,
@@ -47,7 +50,7 @@ exports.handler = async function (event) {
             };
         }
 
-        // Only allow your actual services
+        // Allow only recognized services.
         const allowedServices = [
             "Renovation",
             "Custom Cabinet",
@@ -64,51 +67,62 @@ exports.handler = async function (event) {
             };
         }
 
+        // Hidden environment variable containing the deployed /exec URL.
         const scriptURL = process.env.GOOGLE_SCRIPT_URL;
 
         if (!scriptURL) {
             throw new Error("GOOGLE_SCRIPT_URL is missing");
         }
 
-        console.log("Forwarding submission to Apps Script");
-console.log("Script URL configured:", !!scriptURL);
-console.log("Form fields:", [...params.keys()]);
+        // Send only the fields expected by Apps Script.
+        const googleParams = new URLSearchParams({
+            name,
+            phone,
+            email,
+            service,
+            budget,
+            address,
+            message
+        });
 
-const response = await fetch(scriptURL, {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-    },
-    body: params.toString(),
-    redirect: "follow"
-});
+        console.log("Forwarding validated submission to Apps Script");
 
-const result = await response.text();
+        const response = await fetch(scriptURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: googleParams.toString(),
+            redirect: "follow"
+        });
 
-console.log("Google Apps Script HTTP status:", response.status);
-console.log("Google Apps Script response:", result);
+        const result = (await response.text()).trim();
 
-if (!response.ok || !result.trim().startsWith("Success")) {
-    throw new Error(
-        `Google Apps Script failed: HTTP ${response.status}: ${result}`
-    );
-}
+        console.log("Apps Script HTTP status:", response.status);
+        console.log("Apps Script reply:", result);
 
-return {
-    statusCode: 200,
-    headers: {
-        "Content-Type": "text/plain"
-    },
-    body: "Success"
-};
+        if (!response.ok || result !== "Success") {
+            console.error("Apps Script did not confirm saving:", result);
 
+            return {
+                statusCode: 502,
+                headers: { "Content-Type": "text/plain" },
+                body: "Google Sheets save failed. Please try again."
+            };
+        }
+
+        return {
+            statusCode: 200,
+            headers: { "Content-Type": "text/plain" },
+            body: "Success"
+        };
 
     } catch (error) {
-
-        console.error("Function error:", error);
+        console.error("Submission error:", error);
 
         return {
             statusCode: 500,
+            headers: { "Content-Type": "text/plain" },
             body: "Submission failed"
         };
     }
