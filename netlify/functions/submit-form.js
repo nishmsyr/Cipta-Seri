@@ -70,21 +70,25 @@ exports.handler = async function (event) {
             throw new Error("GOOGLE_SCRIPT_URL is missing");
         }
 
-        const response = await fetch(scriptURL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: event.body
-        });
+        console.log("Forwarding submission to Apps Script");
+console.log("Script URL configured:", !!scriptURL);
+console.log("Form fields:", [...params.keys()]);
 
-        
+const response = await fetch(scriptURL, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: params.toString(),
+    redirect: "follow"
+});
+
 const result = await response.text();
 
 console.log("Google Apps Script HTTP status:", response.status);
 console.log("Google Apps Script response:", result);
 
-if (!response.ok || result.trim() !== "Success") {
+if (!response.ok || !result.trim().startsWith("Success")) {
     throw new Error(
         `Google Apps Script failed: HTTP ${response.status}: ${result}`
     );
