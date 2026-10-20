@@ -78,15 +78,26 @@ exports.handler = async function (event) {
             body: event.body
         });
 
-        const result = await response.text();
+        
+const result = await response.text();
 
-        return {
-            statusCode: 200,
-            headers: {
-                "Content-Type": "text/plain"
-            },
-            body: result
-        };
+console.log("Google Apps Script HTTP status:", response.status);
+console.log("Google Apps Script response:", result);
+
+if (!response.ok || result.trim() !== "Success") {
+    throw new Error(
+        `Google Apps Script failed: HTTP ${response.status}: ${result}`
+    );
+}
+
+return {
+    statusCode: 200,
+    headers: {
+        "Content-Type": "text/plain"
+    },
+    body: "Success"
+};
+
 
     } catch (error) {
 
